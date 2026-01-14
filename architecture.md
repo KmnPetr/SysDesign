@@ -13,6 +13,7 @@ graph LR
     style ANDROID fill:#fff3cd,stroke:#e6b800,stroke-width:1px
     style IOS fill:#fff3cd,stroke:#e6b800,stroke-width:1px
     style WEB fill:#fff3cd,stroke:#e6b800,stroke-width:1px
+```
 
 ## Сначала ***пользователь*** открывает веб-интерфейс (UI).  
 UI отправляет запрос к API, который обрабатывает запрос и взаимодействует с базой данных PostgreSQL и сервисом авторизации (Auth Service).  

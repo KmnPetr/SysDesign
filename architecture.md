@@ -7,6 +7,9 @@ graph LR
         ANDROID[Android]
         IOS[iOS]
         WEB[Web]
+
+        ANDROID --- IOS
+        IOS --- WEB
     end
 
     style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:3px

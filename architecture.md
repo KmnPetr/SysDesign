@@ -17,7 +17,7 @@ graph LR
         INGRESS1[NGINX Ingress 1]
         INGRESS2[NGINX Ingress 2]
 
-        AUTH["Authentication Service"]
+        AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа через аккаунты (Google, Apple, Yandex) — OAuth2<br/>• Заблок. токены"]
         PAYMENT["Payment Service"]
         AUDIO_PUBLISH["Audio Publishing Service"]
         MUSIC_STORAGE["Audio Storage Service"]

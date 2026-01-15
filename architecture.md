@@ -96,7 +96,7 @@ graph LR
 
 ----
 ----
-### пример горизонтального масштабирования Authentication Service
+## Пример горизонтального масштабирования Authentication Service
 ```mermaid
 graph LR
     subgraph AUTH["<b><font size='5'>Authentication Service</font></b>"]

@@ -33,6 +33,7 @@ graph LR
 
 
     CDN(("<b>CDN</b>"))
+    OAUTH(("OAuth2 Providers<br/>• Google<br/>• Apple<br/>• Yandex"))
 
     %% Соединения
     CLIENT --> LB1
@@ -51,13 +52,10 @@ graph LR
     INGRESS2 ---> SDN_SR
 
     AUTH ---> STORE
-    PAYMENT ---> STORE
-    AUDIO_PUBLISH ---> STORE
-    MUSIC_STORAGE ---> STORE
-    USER_DATA ---> STORE
 
     CLIENT ---> CDN
     CDN ---> SDN_SR
+    AUTH ---> OAUTH
 
     %% Стили
     style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
@@ -75,6 +73,7 @@ graph LR
     style MUSIC_STORAGE fill:#fddede,stroke:#cc3333,stroke-width:2px
     style USER_DATA fill:#ffe6f0,stroke:#cc3399,stroke-width:2px
     style CDN fill:#fff3b3,stroke:#e6b800,stroke-width:2px
+    style OAUTH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
 ```
 
 ----

@@ -4,24 +4,77 @@
 
 ```mermaid
 graph LR
-    subgraph CLIENT["Client"]
-        direction LR
-        ANDROID[Android]
-        IOS[iOS]
-        WEB[Web]
+    CLIENT["<b><font size='5'>Client</font></b><br/>• Web<br/>• iOS<br/>• Android"]
 
-        ANDROID --- IOS
-        IOS --- WEB
+    subgraph LB["Load Balancers"]
+        direction LR
+        LB1[LB-1]
+        LB2[LB-2]
     end
 
-    %% скрываем линии
-    linkStyle 0 stroke-width:0
-    linkStyle 1 stroke-width:0
+    subgraph K8S["Kubernetes Cluster"]
+        direction TB
+        INGRESS1[NGINX Ingress 1]
+        INGRESS2[NGINX Ingress 2]
 
-    style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:3px
-    style ANDROID fill:#fff3cd,stroke:#e6b800,stroke-width:1px
-    style IOS fill:#fff3cd,stroke:#e6b800,stroke-width:1px
-    style WEB fill:#fff3cd,stroke:#e6b800,stroke-width:1px
+        AUTH["Authentication Service"]
+        PAYMENT["Payment Service"]
+        AUDIO_PUBLISH["Audio Publishing Service"]
+        MUSIC_STORAGE["Audio Storage Service"]
+        USER_DATA["User Data Service"]
+        SDN_SR["SDN Service"]
+    end
+
+    subgraph STORE["<b>Store</b>"]
+        direction TB
+        PG1[(PostgreSQL 1)]
+        PG2[(PostgreSQL 2)]
+    end
+
+
+    CDN(("<b>CDN</b>"))
+
+    %% Соединения
+    CLIENT --> LB1
+    CLIENT --> LB2
+
+    LB1 --> INGRESS1
+    LB1 --> INGRESS2
+    LB2 --> INGRESS1
+    LB2 --> INGRESS2
+
+    INGRESS1 ---> AUTH
+    INGRESS2 ---> PAYMENT
+    INGRESS1 ---> AUDIO_PUBLISH
+    INGRESS2 ---> MUSIC_STORAGE
+    INGRESS1 ---> USER_DATA
+    INGRESS2 ---> SDN_SR
+
+    AUTH ---> STORE
+    PAYMENT ---> STORE
+    AUDIO_PUBLISH ---> STORE
+    MUSIC_STORAGE ---> STORE
+    USER_DATA ---> STORE
+
+    CLIENT ---> CDN
+    CDN ---> SDN_SR
+
+    %% Стили
+    style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
+
+    style LB fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style LB1 fill:#c3e6cb,stroke:#28a745,stroke-width:1px
+    style LB2 fill:#c3e6cb,stroke:#28a745,stroke-width:1px
+    style K8S fill:#f0d4ff,stroke:#9933cc,stroke-width:2px
+    style STORE fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style INGRESS1 fill:#e6ccff,stroke:#9933cc,stroke-width:1px
+    style INGRESS2 fill:#e6ccff,stroke:#9933cc,stroke-width:1px
+    style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
+    style PAYMENT fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style AUDIO_PUBLISH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
+    style MUSIC_STORAGE fill:#fddede,stroke:#cc3333,stroke-width:2px
+    style USER_DATA fill:#ffe6f0,stroke:#cc3399,stroke-width:2px
+    style CDN fill:#fff3b3,stroke:#e6b800,stroke-width:2px
 ```
 
 ----

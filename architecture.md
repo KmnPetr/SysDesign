@@ -10,27 +10,27 @@ graph LR
         LB2[LB-2]
     end
 
-    CDN(("<b>   </b><b>CDN</b><b>   </b>"))
+    CDN(("<b> ·   CDN   · </b>"))
 
     subgraph K8S["<b>Kubernetes Cluster</b>"]
         direction TB
         INGRESS1[NGINX Ingress 1]
         INGRESS2[NGINX Ingress 2]
 
-        AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа через аккаунты (Google, Apple, Yandex) — OAuth2<br/>• Заблок. токены"]
+        AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа<br/> через аккаунты<br/> (Google, Apple, Yandex)<br/>• Заблок. токены"]
         PAYMENT["<b>Payment Service</b><br/>• Оплата подписки<br/>• Промокоды<br/>• Акции"]
 
         subgraph MUSIC_STORAGE["<b>Audio Storage Service</b>"]
             direction LR
-            NOTE2["• Хранение ссылок на audio в CDN<br/>• Хранение плейлистов<br/>• Логика публикации новых audio пользователями"]
+            NOTE2["• Хранение ссылок<br/> на audio в CDN<br/>• Хранение плейлистов<br/>• Логика публикации<br/> новых audio<br/> пользователями"]
             REDIS[("Redis")]
         end
 
-        USER_DATA["<b>User Data Service</b><br/>• История воспроизведений<br/>• Лайков<br/>• Личные альбомы<br/>• Аватарка"]
+        USER_DATA["<b>User Data Service</b><br/>• История<br/> воспроизведений<br/>• Лайков<br/>• Личные альбомы<br/>• Аватарка"]
 
         subgraph CDN_SR["<b>CDN Service</b>"]
             direction LR
-            NOTE["• Валидация форматов медиафайлов перед отправкой в CDN"]
+            NOTE["• Валидация форматов<br/> медиафайлов перед<br/> отправкой в CDN"]
             FFMPEG(("ffmpeg"))
         end
     end
@@ -96,26 +96,7 @@ graph LR
 
 ----
 ----
-## Authentication Service
-
-```mermaid
-graph LR
-    INVISIBLE["     "]
-    AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа через аккаунты (Google, Apple, Yandex) — OAuth2<br/>• Заблок. токены"]
-    
-    PG[(PostgreSQL)]
-    OAUTH(("OAuth2 Providers<br/>• Google<br/>• Apple<br/>• Yandex"))
-
-    INVISIBLE --->|HTTP/gRPC/Kafka| AUTH
-    AUTH ---> PG
-     AUTH ---> OAUTH
-
-    style INVISIBLE fill:transparent,stroke-width:0
-    style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
-    style OAUTH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
-```
-
-### горизонтальное масштабирование Authentication Service
+### пример горизонтального масштабирования Authentication Service
 ```mermaid
 graph LR
     subgraph AUTH["<b><font size='5'>Authentication Service</font></b>"]
@@ -158,34 +139,4 @@ sequenceDiagram
 
     Auth->>Store: SELECT * FROM users WHERE uuid = ?
     Store-->>Auth: return user
-```
-
-UI отправляет запрос к API, который обрабатывает запрос и взаимодействует с базой данных PostgreSQL и сервисом авторизации (Auth Service).  
-
-## Диаграмма потока
-
-```mermaid
-graph TD
-    %% Authentication Service
-    AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа через аккаунты (Google, Apple, Yandex) — OAuth2<br/>"]
-    style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
-    
-    %% Payment Service
-    PAYMENT["Payment Service\n- Обработка платежей\n- Проверка карт\n- Создание транзакций"]
-    
-    %% Audio Publishing Service
-    AUDIO_PUBLISH["Audio Publishing Service\n- Принимает аудиофайл\n- Конвертация через FFmpeg\n- Отправка в CDN\n- Сохранение инфо о треке в БД"]
-    
-    %% Music Storage Service
-    MUSIC_STORAGE["Music Storage Service\n- Хранение ссылок на треки в CDN\n- Хранение плейлистов в БД\n- Раздача треков пользователю"]
-    
-    %% Non-Auth User Data Service
-    USER_DATA["Non-Auth User Data Service\n- История прослушивания\n- Личные плейлисты\n- Список понравившихся песен"]
-
-    %% Стили
-    style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
-    style PAYMENT fill:#d4edda,stroke:#33cc66,stroke-width:2px
-    style AUDIO_PUBLISH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
-    style MUSIC_STORAGE fill:#fddede,stroke:#cc3333,stroke-width:2px
-    style USER_DATA fill:#ffe6f0,stroke:#cc3399,stroke-width:2px
 ```

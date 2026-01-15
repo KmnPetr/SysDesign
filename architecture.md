@@ -25,6 +25,7 @@ graph LR
 ```
 
 ----
+----
 ## Authentication Service
 
 ```mermaid
@@ -32,23 +33,51 @@ graph LR
     INVISIBLE["     "]
     AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа через аккаунты (Google, Apple, Yandex) — OAuth2<br/>• Заблок. токены"]
     
-    subgraph STORE["<b>Store</b>"]
-        direction TB
-        POSTGRES1[(PostgreSQL 1)]
-        POSTGRES2[(PostgreSQL 2)]
-        POSTGRES3[(PostgreSQL 3)]
-    end
+    PG[(PostgreSQL)]
     OAUTH(("OAuth2 Providers<br/>• Google<br/>• Apple<br/>• Yandex"))
 
     INVISIBLE --->|HTTP/gRPC/Kafka| AUTH
-    AUTH ---> STORE
+    AUTH ---> PG
      AUTH ---> OAUTH
 
     style INVISIBLE fill:transparent,stroke-width:0
     style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
     style OAUTH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
+```
+
+### горизонтальное масштабирование Authentication Service
+```mermaid
+graph LR
+    subgraph AUTH["<b><font size='5'>Authentication Service</font></b>"]
+        direction TB
+        IM1((Impl 1))
+        IM2((Impl 2))
+        IM3((Impl 3))
+    end
+    
+    subgraph STORE["<b>Store</b>"]
+        direction TB
+        PG1[(PostgreSQL 1)]
+        PG2[(PostgreSQL 2)]
+        PG3[(PostgreSQL 3)]
+    end
+
+    IM1--->PG1
+    IM1--->PG2
+    IM2--->PG1
+    IM2--->PG3
+    IM3--->PG2
+    IM3--->PG3
+
+    style AUTH fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
     style STORE fill:#d4edda,stroke:#33cc66,stroke-width:2px
 ```
+| Таблица       | Поля                     | Назначение                                                              |
+|---------------|--------------------------|-------------------------------------------------------------------------|
+| **users**     | uuid, email, phone, …    | Основная таблица пользователей (хранит полный профиль пользователя)     |
+| **protoindex**| (email/phone), uuid      | Вспом.таблица для распределённого поиска (по уникальному полю ищет uuid)|
+
+
 ```mermaid
 sequenceDiagram
     participant Auth as Authentication Service

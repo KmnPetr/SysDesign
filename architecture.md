@@ -10,23 +10,23 @@ graph LR
         LB2[LB-2]
     end
 
-    CDN(("<b> ·   CDN   · </b>"))
+    CDN(("<b> ·   CDN 📀   · </b>"))
 
     subgraph K8S["<b>Kubernetes Cluster</b>"]
         direction TB
         INGRESS1[NGINX Ingress 1]
         INGRESS2[NGINX Ingress 2]
 
-        AUTH["<b><font size='5'>Authentication Service</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа<br/> через аккаунты<br/> (Google, Apple, Yandex)<br/>• Заблок. токены"]
-        PAYMENT["<b>Payment Service</b><br/>• Оплата подписки<br/>• Промокоды<br/>• Акции"]
+        AUTH["<b><font size='5'>Authentication Service 🔐</font></b><br/>• Регистрация<br/>• Авторизация<br/>• Аутентификация<br/>• Генерация токенов<br/>• Поддержка входа<br/> через аккаунты<br/> (Google, Apple, Yandex)<br/>• Заблок. токены"]
+        PAYMENT["<b>Payment Service 💳</b><br/>• Оплата подписки<br/>• Промокоды<br/>• Акции"]
 
-        subgraph MUSIC_STORAGE["<b>Audio Storage Service</b>"]
+        subgraph MUSIC_STORAGE["<b>Audio Storage Service 🎶</b>"]
             direction LR
             NOTE2["• Хранение ссылок<br/> на audio в CDN<br/>• Хранение плейлистов<br/>• Логика публикации<br/> новых audio<br/> пользователями"]
             REDIS[("Redis")]
         end
 
-        USER_DATA["<b>User Data Service</b><br/>• История<br/> воспроизведений<br/>• Лайков<br/>• Личные альбомы<br/>• Аватарка"]
+        USER_DATA["<b>User Data Service 👤</b><br/>• История<br/> воспроизведений<br/>• Лайков<br/>• Личные альбомы<br/>• Аватарка"]
 
         subgraph CDN_SR["<b>CDN Service</b>"]
             direction LR
@@ -73,7 +73,6 @@ graph LR
 
     %% Стили
     style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
-
     style LB fill:#d4edda,stroke:#33cc66,stroke-width:2px
     style LB1 fill:#c3e6cb,stroke:#28a745,stroke-width:1px
     style LB2 fill:#c3e6cb,stroke:#28a745,stroke-width:1px

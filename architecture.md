@@ -33,6 +33,8 @@ graph LR
             NOTE["• Валидация форматов<br/> медиафайлов перед<br/> отправкой в CDN"]
             FFMPEG(("ffmpeg"))
         end
+
+        MONITOR["<b>Monitoring Services 📊</b><br/>• Prometheus<br/>• Grafana<br/>• Loki<br/>• Alertmanager<br/>• Node Exporter<br/>• kube-state-metrics"]
     end
 
     STORE1[("<b>SQL Store</b>")]
@@ -90,6 +92,7 @@ graph LR
     style CDN fill:#fff3b3,stroke:#e6b800,stroke-width:2px
     style OAUTH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
     style NOTE fill:transparent,stroke-width:0
+    style MONITOR fill:#d1f0ff,stroke:#3399cc,stroke-width:2px
     style NOTE2 fill:transparent,stroke-width:0
 ```
 

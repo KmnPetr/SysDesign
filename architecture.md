@@ -2,6 +2,8 @@
 
 ```mermaid
 graph LR
+
+
     CLIENT["<b><font size='5'>Client</font></b><br/>• Web<br/>• iOS<br/>• Android"]
 
     subgraph LB["<b>Load Balancers</b>"]
@@ -10,7 +12,8 @@ graph LR
         LB2[LB-2]
     end
 
-    CDN(("<b> ·   CDN 📀   · </b>"))
+    CDN(("<b> ·   CDN 📀🎵🖼️   · </b><br/>• Хранение аудиофайлов, изображений"))
+
 
     subgraph K8S["<b>Kubernetes Cluster</b>"]
         direction TB
@@ -43,6 +46,10 @@ graph LR
     STORE3[("<b>SQL Store</b>")]
     STORE4[("<b>SQL Store</b>")]
     BILLING((Billing<br/>Stripe · PayPal<br/> · СБП · др.))
+
+
+    %%VAULT["<b>Vault 🔑</b><br/>• Хранение секретов"]
+
 
 
 

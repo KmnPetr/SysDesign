@@ -38,6 +38,7 @@ graph LR
 
 ```
 ## Выбор Edge Node ( 2-вариант ВК)
+минусы: множественные запросы на Edge_Node для проверки длины пути; дополнительный код на клиенте
 
 ```mermaid
 graph LR
@@ -88,5 +89,53 @@ graph LR
     style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
     style BASE_STORAGE fill:#d1ffd1,stroke:#33cc33,stroke-width:2px
 
+```
+
+
+# Base Storage
+```mermaid
+graph LR
+
+
+    CLIENT["<b><font size='5'>Client</font></b>"]
+
+    subgraph LB["<b>Load Balancers</b>"]
+        direction TB
+        LB1[LB-1]
+        LB2[LB-2]
+    end
+
+    subgraph S3["<b>S3</b>"]
+        direction TB
+
+        STORE1[("<b>MinIO</b>")]
+        STORE2[("<b>MinIO</b>")]
+        STORE3[("<b>MinIO</b>")]
+        STORE4[("<b>MinIO</b>")]
+    end
+
+        CLIENT ---> LB1
+        CLIENT ---> LB2
+        LB1 ---> STORE1
+        LB2 ---> STORE2
+        LB1 ---> STORE3
+        LB2 ---> STORE4
+
+        STORE1 <---> STORE2
+        STORE2 <---> STORE3
+        STORE3 <---> STORE4
+
+
+
+
+    style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
+    style LB fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style LB1 fill:#c3e6cb,stroke:#28a745,stroke-width:1px
+    style LB2 fill:#c3e6cb,stroke:#28a745,stroke-width:1px
+    style S3 fill:#f0d4ff,stroke:#9933cc,stroke-width:2px
+    style STORE1 fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style STORE2 fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style STORE3 fill:#d4edda,stroke:#33cc66,stroke-width:2px
+    style STORE4 fill:#d4edda,stroke:#33cc66,stroke-width:2px
 ```
 

@@ -127,7 +127,7 @@ graph LR
 - отдает по запросу на Edge Node файлы
 - для хранения используется распределенная сеть из S3 MinIO
 - на входе стоят Load Balancers перенаправляют запрос на узел MinIO по round-robin
-- 
+
 ```mermaid
 graph LR
 

@@ -8,7 +8,7 @@ graph LR
     CLIENT["<b><font size='5'>Client</font></b>"]
 
 
-    GEO_DNS["Geo DNS 🌐 + Anycast IP"]
+    GEO_DNS["<b>Geo DNS 🌐</b><br/>• F5 BIG‑IP DNS (платный)"]
 
 
     EDGE_NODE1["<b>Edge Node (Россия)</b><br/> 10.0.1.102"]

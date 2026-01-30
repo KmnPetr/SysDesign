@@ -97,7 +97,7 @@ graph LR
 graph LR
 
 
-    CLIENT["<b><font size='5'>Client</font></b>"]
+    CLIENT["<b><font size='5'>Edge Node</font></b>"]
 
     subgraph LB["<b>Load Balancers</b>"]
         direction TB

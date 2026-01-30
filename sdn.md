@@ -122,13 +122,15 @@ graph LR
 
 
 # Base Storage
-```mermaid
-graph LR
 
 - центральное хранилище, хранит все файлы
 - отдает по запросу на Edge Node файлы
 - для хранения используется распределенная сеть из S3 MinIO
 - на входе стоят Load Balancers перенаправляют запрос на узел MinIO по round-robin
+- 
+```mermaid
+graph LR
+
 
 
     CLIENT["<b><font size='5'>Edge Node</font></b>"]

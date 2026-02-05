@@ -3,7 +3,7 @@
 - каждая Edge Node (CDN) ведет подсчет количесва обращений пользователей за аудио, а также запоминает id самих пользователей, некоторые вспомогательные метаданные например время прослушивания
 - в определенные промежутки времени скидывает статистику на Statistic Service
 - Statistic Service пишет логи в ClickHouse (append-only)
-- раз в сутки запускаются Runners анализа collaborative filtering, полученные результаты созраняются в туже или свою ClickHouse
+- раз в сутки запускаются Runners анализа collaborative filtering
 
 ```mermaid
     graph LR

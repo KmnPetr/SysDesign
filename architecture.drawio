@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="5">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 YaBrowser/25.8.0.0 Safari/537.36" version="29.4.0" pages="5">
   <diagram name="main" id="WavlXpf9AdyNdB_6igc2">
     <mxGraphModel dx="2426" dy="1512" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -1353,7 +1353,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="sMQfv52-nljVFzdf6h6t" name="paimentService">
-    <mxGraphModel dx="1508" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2350" dy="1374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1369,19 +1369,19 @@
           <mxGeometry height="150" width="80" x="40" y="460" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="" vertex="1">
-          <mxGeometry height="310" width="280" x="200" y="300" as="geometry" />
+          <mxGeometry height="410" width="360" x="200" y="320" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-2" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;fillColor=#eeeeee;strokeColor=#36393d;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Billing Provider&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;·&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;Stripe&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;· PayPal&lt;/span&gt;&lt;/font&gt;&lt;/i&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;· СБП&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;· др.&lt;/span&gt;&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="150" width="310" x="1640" y="170" as="geometry" />
+          <mxGeometry height="150" width="310" x="1815" y="177.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-28" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h2&gt;&lt;br&gt;&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="455" width="700" x="881" y="30" as="geometry" />
+          <mxGeometry height="455" width="700" x="1056" y="37.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-44" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;startArrow=classic;startFill=1;" target="MhnfAkHGFqouqwoGNW_G-28">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-30" parent="1" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.octagon2;align=center;verticalAlign=middle;dx=15;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h2&gt;EventQueue&lt;/h2&gt;&lt;h2&gt;&amp;nbsp;(Kafka)&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="240" width="233" x="550" y="415" as="geometry" />
+          <mxGeometry height="240" width="233" x="690" y="400" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-31" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;startArrow=classic;startFill=1;" target="MhnfAkHGFqouqwoGNW_G-30">
           <mxGeometry relative="1" as="geometry" />
@@ -1392,16 +1392,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
-          <mxGeometry height="420" width="720" x="865" y="510" as="geometry" />
+          <mxGeometry height="420" width="720" x="1040" y="517.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-35" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
-          <mxGeometry height="320" width="640" x="905" y="580" as="geometry" />
+          <mxGeometry height="320" width="640" x="1080" y="587.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Subscription Store&lt;/font&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="80" width="250" x="1100" y="510" as="geometry" />
+          <mxGeometry height="80" width="250" x="1275" y="517.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-37" parent="1" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;" value="" vertex="1">
-          <mxGeometry height="244" width="600" x="925" y="618" as="geometry" />
+          <mxGeometry height="244" width="600" x="1100" y="625.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-38" parent="MhnfAkHGFqouqwoGNW_G-37" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry height="60" width="600" as="geometry" />
@@ -1430,18 +1430,18 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h2&gt;Billing Service&lt;br&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px; font-weight: normal;&quot;&gt;на каждого провайдера биллинга по одному сервису&lt;/font&gt;&lt;/i&gt;&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="80" width="367.5" x="1047.25" y="50" as="geometry" />
+          <mxGeometry height="80" width="367.5" x="1222.25" y="57.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-46" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.16;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;" target="MhnfAkHGFqouqwoGNW_G-2">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1693.5999999999995" y="262.5" as="targetPoint" />
+            <mxPoint x="1868.5999999999995" y="270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-47" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
-          <mxGeometry height="320" width="640" x="911" y="130" as="geometry" />
+          <mxGeometry height="320" width="640" x="1086" y="137.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-48" parent="1" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;" value="" vertex="1">
-          <mxGeometry height="244" width="600" x="931" y="180" as="geometry" />
+          <mxGeometry height="244" width="600" x="1106" y="187.5" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-49" parent="MhnfAkHGFqouqwoGNW_G-48" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="" vertex="1">
           <mxGeometry height="60" width="600" as="geometry" />
@@ -1470,7 +1470,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-55" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
-          <mxGeometry height="1130" width="120" x="40" y="1000" as="geometry" />
+          <mxGeometry height="1640" width="120" x="40" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-56" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Последовательность вызовов на оформление подписки&lt;/h1&gt;" vertex="1">
           <mxGeometry height="50" width="780" x="40" y="920" as="geometry" />
@@ -1479,12 +1479,12 @@
           <mxGeometry height="30" width="60" x="70" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
-          <mxGeometry height="1130" width="120" x="360" y="1000" as="geometry" />
+          <mxGeometry height="1360" width="120" x="360" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h2&gt;&lt;b style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;&quot;&gt;Orchestrato&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;r&lt;/font&gt;&lt;/font&gt;&lt;/b&gt;&lt;/h2&gt;" vertex="1">
           <mxGeometry height="30" width="115" x="362.5" y="1000" as="geometry" />
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-63" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-55" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.044;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.004;entryY=0.37;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="MhnfAkHGFqouqwoGNW_G-76">
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-63" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-55" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1.008;exitY=0.03;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.004;entryY=0.37;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="MhnfAkHGFqouqwoGNW_G-76">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="180" y="1090" as="sourcePoint" />
             <mxPoint x="380" y="1090" as="targetPoint" />
@@ -1496,7 +1496,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="" vertex="1">
-          <mxGeometry height="1170" width="120" x="680" y="1000" as="geometry" />
+          <mxGeometry height="1200" width="120" x="680" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h2&gt;Kafka&lt;/h2&gt;" vertex="1">
           <mxGeometry height="30" width="117" x="680" y="1000" as="geometry" />
@@ -1513,35 +1513,45 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&lt;b&gt;Payment Service 💳&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;b&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Orchestrato&lt;/font&gt;&lt;/span&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;r&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;Оркестрирует проведение транзакции&lt;/i&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="270" x="205" y="320" as="geometry" />
+          <mxGeometry height="60" width="270" x="205" y="340" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-70" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" value="" vertex="1">
-          <mxGeometry height="205" width="220" x="230" y="385" as="geometry" />
+          <mxGeometry height="265" width="300" x="230" y="405" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-71" parent="1" style="shape=table;startSize=0;container=1;collapsible=0;childLayout=tableLayout;" value="" vertex="1">
-          <mxGeometry height="146" width="190" x="245" y="424" as="geometry" />
+          <mxGeometry height="206" width="265" x="245" y="444" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-72" parent="MhnfAkHGFqouqwoGNW_G-71" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry height="26" width="190" as="geometry" />
+          <mxGeometry height="37" width="265" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-73" parent="MhnfAkHGFqouqwoGNW_G-72" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;saga_instance&lt;/font&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="26" width="190" as="geometry">
-            <mxRectangle height="26" width="190" as="alternateBounds" />
+          <mxGeometry height="37" width="133" as="geometry">
+            <mxRectangle height="37" width="133" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tXn0EhKrHi2zu-P2w4YW-1" parent="MhnfAkHGFqouqwoGNW_G-72" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;outbox&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="37" width="132" x="133" as="geometry">
+            <mxRectangle height="37" width="132" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-74" parent="MhnfAkHGFqouqwoGNW_G-71" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;strokeColor=inherit;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" value="" vertex="1">
-          <mxGeometry height="120" width="190" y="26" as="geometry" />
+          <mxGeometry height="169" width="265" y="37" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-75" parent="MhnfAkHGFqouqwoGNW_G-74" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;" value="&lt;div&gt;id&lt;/div&gt;&lt;div&gt;saga_type&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;current_step&lt;/div&gt;&lt;div&gt;context (jsonb)&lt;/div&gt;&lt;div&gt;created_at&lt;/div&gt;&lt;div&gt;updated_at&lt;/div&gt;" vertex="1">
-          <mxGeometry height="120" width="190" as="geometry">
-            <mxRectangle height="120" width="190" as="alternateBounds" />
+          <mxGeometry height="169" width="133" as="geometry">
+            <mxRectangle height="169" width="133" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tXn0EhKrHi2zu-P2w4YW-2" parent="MhnfAkHGFqouqwoGNW_G-74" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;strokeColor=inherit;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;pointerEvents=1;align=center;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;id&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;aggregate_id&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;payload:&amp;nbsp;&lt;/span&gt;&lt;i style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;{...}&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;status&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;event_type&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="169" width="132" x="133" as="geometry">
+            <mxRectangle height="169" width="132" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-76" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2) Создает saga_instance, делает первый шаг" vertex="1">
           <mxGeometry height="50" width="120" x="360" y="1030" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-77" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
-          <mxGeometry height="1140" width="120" x="1000" y="1000" as="geometry" />
+          <mxGeometry height="1640" width="120" x="1000" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Subscription Store&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="120" x="1000" y="1010" as="geometry" />
@@ -1600,10 +1610,10 @@
         <mxCell id="MhnfAkHGFqouqwoGNW_G-92" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8) Сдвигает шаг saga_instanse" vertex="1">
           <mxGeometry height="60" width="120" x="360" y="1150" as="geometry" />
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-93" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-58" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1.001;exitY=0.212;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.205;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="MhnfAkHGFqouqwoGNW_G-65">
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-93" edge="1" parent="1" source="MhnfAkHGFqouqwoGNW_G-58" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=0.983;exitY=0.176;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="520" y="1250" as="sourcePoint" />
-            <mxPoint x="780" y="1230" as="targetPoint" />
+            <mxPoint x="681" y="1240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-94" connectable="0" parent="MhnfAkHGFqouqwoGNW_G-93" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="9) Event для&lt;div&gt;Billing Service&lt;/div&gt;" vertex="1">
@@ -1617,8 +1627,8 @@
             <mxPoint x="799.5" y="1240" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-96" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
-          <mxGeometry height="1140" width="120" x="1320" y="1000" as="geometry" />
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-96" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="1000" width="120" x="1320" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-97" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Billing Servise&lt;/font&gt;&lt;/b&gt;" vertex="1">
           <mxGeometry height="30" width="120" x="1320" y="1000" as="geometry" />
@@ -1649,12 +1659,12 @@
           <mxGeometry height="70" width="120" x="1320" y="1230" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-101" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" value="" vertex="1">
-          <mxGeometry height="1130" width="120" x="1640" y="1000" as="geometry" />
+          <mxGeometry height="880" width="120" x="1640" y="1000" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-102" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Billing Provider&lt;/b&gt;&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="120" x="1640" y="1000" as="geometry" />
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-105" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.976;entryY=0.115;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;" target="MhnfAkHGFqouqwoGNW_G-107">
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-105" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.633;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;" target="MhnfAkHGFqouqwoGNW_G-107">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1640" y="1397" as="sourcePoint" />
           </mxGeometry>
@@ -1664,8 +1674,8 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-107" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="14) создает outbox,&lt;div&gt;кладет ссылку в аутбокс&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="1320" y="1390" as="geometry" />
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-107" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="14) создает outbox,&lt;div&gt;кладет ссылку в outbox&lt;/div&gt;&lt;div&gt;COMMIT;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="1320" y="1360" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-109" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="15)&amp;nbsp;Debezium слушает&amp;nbsp;WAL пушит евенты в кафку" vertex="1">
           <mxGeometry height="45" width="120" x="1320" y="1450" as="geometry" />
@@ -1701,12 +1711,12 @@
           <mxGeometry height="60" width="120" x="360" y="1450" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-125" parent="1" style="rounded=0;whiteSpace=wrap;html=1;glass=0;fillColor=light-dark(#dbe1e6, #39454e);fillStyle=zigzag-line;strokeColor=#23445d;" value="" vertex="1">
-          <mxGeometry height="720" width="200" x="160" y="1400" as="geometry" />
+          <mxGeometry height="960" width="200" x="160" y="1400" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-126" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;Socket или polling&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;(клиент ждет&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;асинхронного ответа)&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;если оркестраторов&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;несколько,&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;сокет соединение&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;устанавливает&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;оркестратор по хешу&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-wrap-mode: nowrap;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;от id пользователя&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="200" width="200" x="160" y="1400" as="geometry" />
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-128" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="21)&amp;nbsp;Debezium слушает&amp;nbsp;WAL, сдвигает офсет кафки, у сохраненных outbox устанавливает status: received" vertex="1">
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-128" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="21)&amp;nbsp;Debezium слушает&amp;nbsp;WAL, сдвигает офсет кафки, у сохраненных outbox устанавливает status: sended" vertex="1">
           <mxGeometry height="110" width="120" x="360" y="1520" as="geometry" />
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-129" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=1.02;entryY=0.417;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.001;exitY=0.629;exitDx=0;exitDy=0;exitPerimeter=0;">
@@ -1715,7 +1725,7 @@
             <mxPoint x="162.28" y="1660.04" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="MhnfAkHGFqouqwoGNW_G-130" connectable="0" parent="MhnfAkHGFqouqwoGNW_G-129" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="22) Отдает линку пользователю" vertex="1">
+        <mxCell id="MhnfAkHGFqouqwoGNW_G-130" connectable="0" parent="MhnfAkHGFqouqwoGNW_G-129" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="22) Отдает линку&lt;div&gt;пользователю&lt;/div&gt;" vertex="1">
           <mxGeometry relative="1" x="-0.0546" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -1733,6 +1743,167 @@
         </mxCell>
         <mxCell id="MhnfAkHGFqouqwoGNW_G-134" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="24)&amp;nbsp;Пользователь вспоминает номер карты, сканирует qr-код, принимает трудное для себя решение" vertex="1">
           <mxGeometry height="109" width="120" x="1640" y="1731" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-1" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.976;entryY=0.115;entryDx=0;entryDy=0;strokeWidth=2;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1643" y="1840" as="sourcePoint" />
+            <mxPoint x="1440" y="1840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-2" connectable="0" parent="41hbXv5z_ESJNCweLyvX-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="25) webhook&lt;div&gt;статус платежа&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0254" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="26) если статус успешен, меняет статус payment на saccess&lt;div&gt;создает outbox&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="120" x="1320" y="1830" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="27)&amp;nbsp;Debezium слушает&amp;nbsp;WAL пушит евенты в кафку" vertex="1">
+          <mxGeometry height="45" width="120" x="1320" y="1910" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-7" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1320" y="1933" as="sourcePoint" />
+            <mxPoint x="800" y="1932" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-8" connectable="0" parent="41hbXv5z_ESJNCweLyvX-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="28) Event успешного проведения платежа для&amp;nbsp;" vertex="1">
+          <mxGeometry relative="1" x="-0.0546" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-9" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.326;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800.0000000000002" y="1932" as="sourcePoint" />
+            <mxPoint x="680" y="1932.04" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-10" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=0.001;exitY=0.629;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="1932.54" as="sourcePoint" />
+            <mxPoint x="480" y="1932" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-11" connectable="0" parent="41hbXv5z_ESJNCweLyvX-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="28) Event успешного&lt;div&gt;проведения платежа для&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0546" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="22) Сдвигает шаг saga_instanse, по поводу что отдал линку" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="1640" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="29) Сдвигает шаг saga_instanse что платеж проведен, создает outbox - команда для sub_service" vertex="1">
+          <mxGeometry height="100" width="120" x="360" y="1920" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="30)&amp;nbsp;Debezium слушает&amp;nbsp;WAL пушит евенты в кафку" vertex="1">
+          <mxGeometry height="45" width="120" x="360" y="2030" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-15" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1.001;exitY=0.212;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.205;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="2060" as="sourcePoint" />
+            <mxPoint x="681" y="2060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-16" connectable="0" parent="41hbXv5z_ESJNCweLyvX-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="31) Event для&lt;div&gt;Subscription Service&lt;/div&gt;&lt;div&gt;команда активировать&lt;/div&gt;&lt;div&gt;&amp;nbsp;подписку&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-18" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1.001;exitY=0.212;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.01;entryY=0.205;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="2060" as="sourcePoint" />
+            <mxPoint x="1001" y="2060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-19" connectable="0" parent="41hbXv5z_ESJNCweLyvX-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="31) Event для&lt;div&gt;Subscription Service&lt;/div&gt;&lt;div&gt;команда активировать&lt;/div&gt;&lt;div&gt;&amp;nbsp;подписку&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-20" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680.5" y="2060" as="sourcePoint" />
+            <mxPoint x="799.5" y="2060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="32) ставит у подписки статус active, создание outbox" vertex="1">
+          <mxGeometry height="80" width="120" x="1000" y="2030" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="33)&amp;nbsp;Debezium слушает&amp;nbsp;WAL пушит евенты в кафку" vertex="1">
+          <mxGeometry height="45" width="120" x="1000" y="2110" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-23" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=1.001;entryY=0.33;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="999.9999999999999" y="2140.7" as="sourcePoint" />
+            <mxPoint x="800.12" y="2140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-24" connectable="0" parent="41hbXv5z_ESJNCweLyvX-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="34)&amp;nbsp; Подписка&lt;div&gt;активирована&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-25" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;exitX=1;exitY=0.326;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800.0000000000002" y="2140" as="sourcePoint" />
+            <mxPoint x="680" y="2140.04" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-26" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=1.001;entryY=0.33;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="679.9999999999999" y="2140.7" as="sourcePoint" />
+            <mxPoint x="480.12" y="2140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-27" connectable="0" parent="41hbXv5z_ESJNCweLyvX-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="34)&amp;nbsp; Подписка&lt;div&gt;активирована&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="35) Сдвигает шаг saga_instanse завершает транзакцию, создает outbox" vertex="1">
+          <mxGeometry height="80" width="120" x="360" y="2130" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-29" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;entryX=1.02;entryY=0.417;entryDx=0;entryDy=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="2190" as="sourcePoint" />
+            <mxPoint x="160" y="2190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-30" connectable="0" parent="41hbXv5z_ESJNCweLyvX-29" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="36) Если пользователь&lt;div&gt;&amp;nbsp;еще активен,&lt;div&gt;&amp;nbsp;уведомляет&lt;div&gt;&amp;nbsp;об активации подписки&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0546" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="37)&amp;nbsp;Debezium слушает&amp;nbsp;WAL, сдвигает офсет кафки, у сохраненных outbox устанавливает status: sended" vertex="1">
+          <mxGeometry height="110" width="120" x="360" y="2210" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-35" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="159" y="2440" as="sourcePoint" />
+            <mxPoint x="1000" y="2440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-36" connectable="0" parent="41hbXv5z_ESJNCweLyvX-35" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="37) Что у меня с подпиской?&lt;div&gt;пользователь запрашивает информацию по статусу подписки&lt;/div&gt;&lt;div&gt;при каждой загрузке приложения&lt;/div&gt;&lt;div&gt;или при получении уведомления в шаге 36&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="38) смотрит наличие подписки у пользователя" vertex="1">
+          <mxGeometry height="60" width="120" x="1000" y="2420" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="39) генерирует peyment jwt token с информацией по активной подписки" vertex="1">
+          <mxGeometry height="60" width="120" x="1000" y="2480" as="geometry" />
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-41" edge="1" parent="1" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;edgeStyle=orthogonalEdgeStyle;endArrow=none;endFill=0;startArrow=classic;startFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="159" y="2560" as="sourcePoint" />
+            <mxPoint x="1000" y="2560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="41hbXv5z_ESJNCweLyvX-42" connectable="0" parent="41hbXv5z_ESJNCweLyvX-41" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div style=&quot;color: rgb(8, 8, 8);&quot;&gt;&lt;pre style=&quot;font-family:&#39;JetBrains Mono&#39;,monospace;font-size:9,8pt;&quot;&gt;&lt;span style=&quot;color: rgb(23, 80, 235);&quot;&gt;40&lt;/span&gt;)  &lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;&lt;i&gt;peyment jwt token&lt;/i&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;пользователь может предъявлять его&lt;br&gt;другим сервисам системы требующим активной подписки&lt;/pre&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1279" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

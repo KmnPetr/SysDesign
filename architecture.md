@@ -40,6 +40,8 @@ graph LR
 
         USER_DATA["<b>User Data Service 👤</b><br/>• История<br/> воспроизведений<br/>• Лайков<br/>• Личные альбомы<br/>• Аватарка"]
 
+        STATS["<b>Statistics Service 📈</b><br/>• Сбор событий<br/>• Аналитика прослушиваний"]
+
         subgraph CDN_SR["<b>CDN Service</b>"]
             direction LR
             NOTE["• Валидация форматов<br/> медиафайлов перед<br/> отправкой в CDN"]
@@ -89,6 +91,9 @@ graph LR
     USER_DATA--->STORE3
     MUSIC_STORAGE--->STORE4
 
+    USER_DATA ---> STATS
+    MUSIC_STORAGE ---> STATS
+
     %% Стили
     style CLIENT fill:#e6f0ff,stroke:#3366cc,stroke-width:2px
     style LB fill:#d4edda,stroke:#33cc66,stroke-width:2px
@@ -109,6 +114,7 @@ graph LR
     style OAUTH fill:#fff3cd,stroke:#e6b800,stroke-width:2px
     style NOTE fill:transparent,stroke-width:0
     style MONITOR fill:#d1f0ff,stroke:#3399cc,stroke-width:2px
+    style STATS fill:#d1f0ff,stroke:#3399cc,stroke-width:2px
     style NOTE2 fill:transparent,stroke-width:0
 ```
 

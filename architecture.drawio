@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="6">
   <diagram name="main" id="WavlXpf9AdyNdB_6igc2">
-    <mxGraphModel dx="2022" dy="1260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3033" dy="1890" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -133,7 +133,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="-NbMDDGeXYNUrbKq4Z6F-5" parent="1" style="swimlane;fillColor=#f8cecc;strokeColor=#b85450;fontSize=18;" value="Statefiull apps" vertex="1">
-          <mxGeometry height="390" width="1169" x="1230" y="1364" as="geometry" />
+          <mxGeometry height="390" width="1169" x="1230" y="1340" as="geometry" />
         </mxCell>
         <mxCell id="7EYyYQpQusufgoaxCwrV-1" parent="-NbMDDGeXYNUrbKq4Z6F-5" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;S3 Minio 📀🎵&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Хранение аудио файлов&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="250" x="39" y="65" as="geometry" />

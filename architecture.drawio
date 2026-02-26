@@ -442,10 +442,10 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="--ztnzf2g8cqZ7WK_Vc2-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h1 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 1.25; border-bottom: 0.666667px solid rgba(209, 217, 224, 0.7); padding-bottom: 0px; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; text-align: start; background-color: rgb(255, 255, 255); margin-top: 0px !important;&quot;&gt;Схема создания аудио контента, хранения, чтения&lt;/h1&gt;" vertex="1">
+        <mxCell id="--ztnzf2g8cqZ7WK_Vc2-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;h1 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; line-height: 1.25; border-bottom: 0.666667px solid rgba(209, 217, 224, 0.7); padding-bottom: 0px; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; text-align: start; background-color: rgb(255, 255, 255); margin-top: 0px !important;&quot;&gt;Схема создания аудио контента, хранения, чтения (CQRS)&lt;/h1&gt;" vertex="1">
           <mxGeometry height="60" width="790" x="10" as="geometry" />
         </mxCell>
-        <mxCell id="--ztnzf2g8cqZ7WK_Vc2-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; position: relative; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;h3 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25;&quot;&gt;Создание, хранение, публикация&lt;/h3&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; padding-left: 2em; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;клиент обращается на сервис для создания нового аудиотрека&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сервис обрабатывает аудиофайл, приводит его к единому формату при помощи утилиты ffmpeg&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сохраняет файл в S3 хранилище&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сохраняет метаданные аудиофайла (ссылка файла в S3, атрибуты оценки произведения выставленные создателем, стиль, жанр и др.) в бд Postgres&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;отправляет запись в Elasticsearch&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;делает запрос на ноды CDN для предварительного кеширования (можно простой запрос на получение файла автоматом закеширует файл)&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;свеже созданные записи будут активно продвигаться первые сутки, CDN файлы cо свежим временем создания кеширует на большее время&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;система рекомендаций активно продвигает новые записи&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+        <mxCell id="--ztnzf2g8cqZ7WK_Vc2-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; position: relative; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;h3 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25;&quot;&gt;Создание, хранение, публикация&lt;/h3&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; padding-left: 2em; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;клиент обращается на сервис для создания нового аудиотрека&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сервис обрабатывает аудиофайл, приводит его к единому формату при помощи утилиты ffmpeg&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сохраняет файл в S3 хранилище&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сохраняет метаданные аудиофайла (ссылка файла в S3, атрибуты оценки произведения выставленные создателем, стиль, жанр и др.) в бд Postgres (write model)&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;публикует событие в Kafka → Read model updater обновляет Elasticsearch и кеш&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;делает запрос на ноды CDN для предварительного кеширования (можно простой запрос на получение файла автоматом закеширует файл)&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;свеже созданные записи будут активно продвигаться первые сутки, CDN файлы cо свежим временем создания кеширует на большее время&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;система рекомендаций активно продвигает новые записи&lt;/li&gt;&lt;/ul&gt;" vertex="1">
           <mxGeometry height="310" width="1180" x="10" y="60" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-2" edge="1" parent="1" source="T41IuqTtgXkMwbrMSPgR-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" target="T41IuqTtgXkMwbrMSPgR-2">
@@ -459,20 +459,30 @@
         <mxCell id="T41IuqTtgXkMwbrMSPgR-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" value="&lt;h2&gt;Client&lt;/h2&gt;" vertex="1">
           <mxGeometry height="60" width="120" x="60" y="510" as="geometry" />
         </mxCell>
-        <mxCell id="T41IuqTtgXkMwbrMSPgR-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Audio Service 🎶&lt;/font&gt;&lt;div&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Создание новой записи audio&lt;/font&gt;&lt;/i&gt;&lt;div&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Валидация форматов ffmpeg&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="PU2qB-ntT41kwdiHpV__-3" edge="1" parent="1" source="T41IuqTtgXkMwbrMSPgR-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;curved=1;strokeWidth=2;" target="CQRS-Audio-Kafka">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-4" connectable="0" parent="PU2qB-ntT41kwdiHpV__-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; background-color: rgb(236, 236, 236);&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20edge%3D%221%22%20parent%3D%221%22%20style%3D%22edgeStyle%3DorthogonalEdgeStyle%3Brounded%3D0%3BorthogonalLoop%3D1%3BjettySize%3Dauto%3Bhtml%3D1%3BentryX%3D0.5%3BentryY%3D0%3BentryDx%3D0%3BentryDy%3D0%3BentryPerimeter%3D0%3Bcurved%3D1%3B%22%3E%3CmxGeometry%20relative%3D%221%22%20as%3D%22geometry%22%3E%3CArray%20as%3D%22points%22%3E%3CmxPoint%20x%3D%221010%22%20y%3D%22540%22%2F%3E%3CmxPoint%20x%3D%221010%22%20y%3D%22905%22%2F%3E%3C%2FArray%3E%3CmxPoint%20x%3D%22610%22%20y%3D%22540%22%20as%3D%22sourcePoint%22%2F%3E%3CmxPoint%20x%3D%221020%22%20y%3D%22905%22%20as%3D%22targetPoint%22%2F%3E%3C%2FmxGeometry%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.1255" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-5" connectable="0" parent="PU2qB-ntT41kwdiHpV__-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="publish event" vertex="1">
+          <mxGeometry relative="1" x="-0.1137" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T41IuqTtgXkMwbrMSPgR-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&lt;b&gt;Audio Write Service&lt;/b&gt; (Command) 🎶&lt;/font&gt;&lt;div&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Создание новой записи audio&lt;/font&gt;&lt;/i&gt;&lt;div&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Валидация форматов ffmpeg&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Публикация события в Kafka&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="190" width="290" x="320" y="445" as="geometry" />
+        </mxCell>
+        <mxCell id="CQRS-Audio-Kafka" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;b&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Kafka&lt;/font&gt;&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="950" y="905" as="geometry" />
         </mxCell>
         <mxCell id="T41IuqTtgXkMwbrMSPgR-3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Postgresql&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Хранение ссылок и атрибутов на файлы audio&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="250" x="710" y="410" as="geometry" />
         </mxCell>
         <mxCell id="T41IuqTtgXkMwbrMSPgR-4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;S3 Minio 📀🎵&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Хранение аудио файлов&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="250" x="710" y="545" as="geometry" />
-        </mxCell>
-        <mxCell id="T41IuqTtgXkMwbrMSPgR-5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Elasticsearch&lt;/font&gt;&lt;/h3&gt;" vertex="1">
-          <mxGeometry height="80" width="260" x="700" y="670" as="geometry" />
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h2 style=&quot;margin-bottom: 0px; margin-top: 0px;&quot;&gt;Edge Nodes (CDN)&lt;/h2&gt;&lt;h2 style=&quot;margin-top: 0px; margin-bottom: 0px;&quot;&gt;&lt;font style=&quot;font-size: 14px; font-weight: normal;&quot;&gt;&lt;i&gt;• предварительный кеш новых audio&lt;/i&gt;&lt;/font&gt;&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="90" width="270" x="40" y="700" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-3" edge="1" parent="1" source="T41IuqTtgXkMwbrMSPgR-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryPerimeter=0;" target="T41IuqTtgXkMwbrMSPgR-3">
           <mxGeometry relative="1" as="geometry">
@@ -486,25 +496,8 @@
             <mxPoint x="710" y="580" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-5" edge="1" parent="1" source="T41IuqTtgXkMwbrMSPgR-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryPerimeter=0;" target="T41IuqTtgXkMwbrMSPgR-5">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="640" y="660" as="sourcePoint" />
-            <mxPoint x="780" y="650" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-6" edge="1" parent="1" source="T41IuqTtgXkMwbrMSPgR-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="8yndtzOuIHC37cQR0VTs-1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="760" as="sourcePoint" />
-            <mxPoint x="750" y="750" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-8" connectable="0" parent="8yndtzOuIHC37cQR0VTs-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;h4 style=&quot;padding: 0px 4px; margin-top: 5px; margin-bottom: 5px;&quot;&gt;запрос на кеширование&lt;/h4&gt;" vertex="1">
-          <mxGeometry relative="1" x="0.2025" y="-19" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; position: relative; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;h3 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25;&quot;&gt;Чтение пользователями записей audio&lt;/h3&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; padding-left: 2em; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;пользователь обращается на Audio Service для получения списков audio&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Audio Service обращается к Elasticsearch при запросе от пользователя поиска аудиотреков по имени или другим текстовым атрибутам&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Elasticsearch выдает сервису список подходящих id аудиотреков&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сервис по полученным id запрашивает обьекты audio у Redis или Postgresql&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;для получения списка id рекомендованных пользвателю audio Audio Service делает запрос на Statistic Service&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Audio Service может сортировать записи перед отдачей например если их создатели платят за продвижение&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;после получения метаданных о треках пользователь загружает файл-audio c CDN&lt;/li&gt;&lt;/ul&gt;" vertex="1">
-          <mxGeometry height="240" width="1170" x="20" y="820" as="geometry" />
+        <mxCell id="8yndtzOuIHC37cQR0VTs-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div class=&quot;markdown-heading&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; position: relative; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;h3 tabindex=&quot;-1&quot; class=&quot;heading-element&quot; dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 24px; margin-bottom: 16px; font-size: 1.25em; line-height: 1.25;&quot;&gt;Чтение пользователями записей audio&lt;/h3&gt;&lt;svg class=&quot;octicon octicon-link&quot; viewBox=&quot;0 0 16 16&quot; version=&quot;1.1&quot; width=&quot;16&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/div&gt;&lt;ul dir=&quot;auto&quot; style=&quot;box-sizing: border-box; margin-top: 0px; margin-bottom: 16px; padding-left: 2em; color: rgb(31, 35, 40); font-family: -apple-system, BlinkMacSystemFont, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);&quot;&gt;&lt;li style=&quot;box-sizing: border-box;&quot;&gt;пользователь обращается на Audio Read Service (Query) для получения списков audio&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Read Service обращается к Elasticsearch (read model) при запросе от пользователя поиска аудиотреков по имени или другим текстовым атрибутам&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Elasticsearch выдает сервису список подходящих id аудиотреков&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;сервис по полученным id запрашивает объекты audio у Redis (read model) или read replica Postgresql&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;для списка id рекомендаций Read Service запрашивает Statistic Service&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;Read Service может сортировать записи перед отдачей например если их создатели платят за продвижение&lt;/li&gt;&lt;li style=&quot;box-sizing: border-box; margin-top: 0.25em;&quot;&gt;после получения метаданных о треках пользователь загружает файл-audio c CDN&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="240" width="890" x="20" y="820" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-18" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" target="8yndtzOuIHC37cQR0VTs-14">
           <mxGeometry relative="1" as="geometry" />
@@ -515,30 +508,21 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" value="&lt;h2&gt;Client&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="100" y="1240" as="geometry" />
+          <mxGeometry height="60" width="120" x="100" y="1330" as="geometry" />
         </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-12" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Elasticsearch&lt;/font&gt;&lt;/h3&gt;" vertex="1">
-          <mxGeometry height="80" width="210" x="820" y="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-13" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Postgresql&lt;/font&gt;&lt;/b&gt;" vertex="1">
-          <mxGeometry height="80" width="210" x="820" y="1320" as="geometry" />
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Audio Service 🎶&lt;/font&gt;&lt;/h3&gt;" vertex="1">
-          <mxGeometry height="80" width="250" x="400" y="1230" as="geometry" />
+        <mxCell id="8yndtzOuIHC37cQR0VTs-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Audio Read Service (Query) 🎶&lt;/font&gt;&lt;/h3&gt;&lt;div&gt;&lt;i&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;только чтение read-моделей&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="250" x="400" y="1320" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;strokeWidth=2;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;h2 style=&quot;margin-bottom: 0px; margin-top: 0px;&quot;&gt;Edge Nodes (CDN)&lt;/h2&gt;" vertex="1">
-          <mxGeometry height="60" width="230" x="90" y="1390" as="geometry" />
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-16" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3 style=&quot;margin-top: 0px; margin-bottom: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 17px;&quot;&gt;Redis&lt;/font&gt;&lt;/span&gt;&lt;/h3&gt;&lt;h3 style=&quot;margin-top: 0px; margin-bottom: 0px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-weight: normal;&quot;&gt;&lt;i style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;• Кеш для read-запросов&lt;/font&gt;&lt;/i&gt;&lt;/span&gt;&lt;/h3&gt;" vertex="1">
-          <mxGeometry height="90" width="210" x="820" y="1220" as="geometry" />
+          <mxGeometry height="60" width="230" x="90" y="1480" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-17" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;h3&gt;Statistic Service 📊&lt;/h3&gt;" vertex="1">
-          <mxGeometry height="60" width="160" x="760" y="1440" as="geometry" />
+          <mxGeometry height="60" width="160" x="760" y="1530" as="geometry" />
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-20" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="8yndtzOuIHC37cQR0VTs-15">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="350" y="1390" as="sourcePoint" />
-            <mxPoint x="530" y="1390" as="targetPoint" />
+            <mxPoint x="350" y="1480" as="sourcePoint" />
+            <mxPoint x="530" y="1480" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-21" connectable="0" parent="8yndtzOuIHC37cQR0VTs-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;load audio&lt;/i&gt;&lt;/span&gt;" vertex="1">
@@ -546,10 +530,10 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-24" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;" target="8yndtzOuIHC37cQR0VTs-12">
+        <mxCell id="8yndtzOuIHC37cQR0VTs-24" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="PU2qB-ntT41kwdiHpV__-9">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="460" y="1380" as="sourcePoint" />
-            <mxPoint x="505" y="1470" as="targetPoint" />
+            <mxPoint x="460" y="1470" as="sourcePoint" />
+            <mxPoint x="850" y="1320" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-25" connectable="0" parent="8yndtzOuIHC37cQR0VTs-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;search&lt;/i&gt;&lt;/span&gt;" vertex="1">
@@ -557,33 +541,43 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-26" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1.001;exitY=0.367;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="8yndtzOuIHC37cQR0VTs-16">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="560" y="1390" as="sourcePoint" />
-            <mxPoint x="605" y="1480" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-27" connectable="0" parent="8yndtzOuIHC37cQR0VTs-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;i&gt;cache&lt;/i&gt;&lt;/span&gt;" vertex="1">
-          <mxGeometry relative="1" x="-0.1074" y="2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="8yndtzOuIHC37cQR0VTs-28" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryPerimeter=0;" target="8yndtzOuIHC37cQR0VTs-13">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="640" y="1430" as="sourcePoint" />
-            <mxPoint x="685" y="1520" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-30" edge="1" parent="1" source="8yndtzOuIHC37cQR0VTs-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;exitX=1;exitY=1;exitDx=0;exitDy=0;" target="8yndtzOuIHC37cQR0VTs-17">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="580" y="1450" as="sourcePoint" />
-            <mxPoint x="625" y="1540" as="targetPoint" />
+            <mxPoint x="580" y="1540" as="sourcePoint" />
+            <mxPoint x="625" y="1630" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="8yndtzOuIHC37cQR0VTs-31" connectable="0" parent="8yndtzOuIHC37cQR0VTs-30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;i&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;recomendations&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry relative="1" x="-0.1074" y="2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-15" edge="1" parent="1" source="PU2qB-ntT41kwdiHpV__-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" target="PU2qB-ntT41kwdiHpV__-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=2;" value="&lt;b&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Read model updater&lt;/font&gt;&lt;/b&gt;&lt;div&gt;подписан на события добавления новых записей пишет их в Elasticsearch&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="270" x="630" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-8" edge="1" parent="1" source="CQRS-Audio-Kafka" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1.011;entryY=0.078;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;curved=1;strokeWidth=2;" target="PU2qB-ntT41kwdiHpV__-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-9" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;" value="Elasticsearch cluster" vertex="1">
+          <mxGeometry height="350" width="240" x="1070" y="1220" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-10" parent="PU2qB-ntT41kwdiHpV__-9" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Elasticsearch&lt;/font&gt;&lt;/h3&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-11" parent="PU2qB-ntT41kwdiHpV__-9" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Elasticsearch&lt;/font&gt;&lt;/h3&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="20" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-12" parent="PU2qB-ntT41kwdiHpV__-9" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;h3&gt;&lt;font style=&quot;font-size: 16px;&quot;&gt;Elasticsearch&lt;/font&gt;&lt;/h3&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="20" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-13" edge="1" parent="PU2qB-ntT41kwdiHpV__-9" source="PU2qB-ntT41kwdiHpV__-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;strokeWidth=2;startArrow=classic;startFill=1;" target="PU2qB-ntT41kwdiHpV__-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PU2qB-ntT41kwdiHpV__-14" edge="1" parent="PU2qB-ntT41kwdiHpV__-9" source="PU2qB-ntT41kwdiHpV__-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;strokeWidth=2;" target="PU2qB-ntT41kwdiHpV__-11">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; Chromium GOST) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.5.6" pages="6">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 YaBrowser/25.8.0.0 Safari/537.36" version="29.4.0" pages="6">
   <diagram name="main" id="WavlXpf9AdyNdB_6igc2">
     <mxGraphModel dx="1783" dy="1113" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -2171,7 +2171,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="rLyr-U2GKPCX24SzbXcv" name="adClickAggregator">
-    <mxGraphModel dx="1672" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1426" dy="928" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2210,45 +2210,21 @@
         <mxCell id="8UIAFC9thic4XI14_rR6-9" edge="1" parent="1" source="8UIAFC9thic4XI14_rR6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;" target="8UIAFC9thic4XI14_rR6-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="8UIAFC9thic4XI14_rR6-14" edge="1" parent="1" source="8UIAFC9thic4XI14_rR6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" target="8UIAFC9thic4XI14_rR6-12">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="8UIAFC9thic4XI14_rR6-14" edge="1" parent="1" source="8UIAFC9thic4XI14_rR6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;entryPerimeter=0;" target="t8skYRUXIG7qXgkfOcBk-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="970" y="690" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="8UIAFC9thic4XI14_rR6-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Kafka&lt;/b&gt;&lt;/font&gt;" vertex="1">
           <mxGeometry height="80" width="80" x="810" y="650" as="geometry" />
         </mxCell>
-        <mxCell id="8UIAFC9thic4XI14_rR6-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Apache Flink&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font&gt;Агрегация кликов по 1-минутным интервалам&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="970" y="660" as="geometry" />
-        </mxCell>
         <mxCell id="t8skYRUXIG7qXgkfOcBk-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;strokeWidth=2;fillColor=#d5e8d4;strokeColor=#82b366;" value="&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-weight: bold; font-size: 16px;&quot;&gt;ClickHouse&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Хранит агрегированные данные&lt;/font&gt;&lt;/font&gt;" vertex="1">
-          <mxGeometry height="85" width="170" x="1180" y="647.5" as="geometry" />
-        </mxCell>
-        <mxCell id="t8skYRUXIG7qXgkfOcBk-2" edge="1" parent="1" source="8UIAFC9thic4XI14_rR6-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;" target="t8skYRUXIG7qXgkfOcBk-1">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry height="85" width="170" x="980" y="647.5" as="geometry" />
         </mxCell>
         <mxCell id="0a0ofz-E8oe2l0loChPp-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Analitic service&lt;/b&gt;&lt;/font&gt;" vertex="1">
-          <mxGeometry height="60" width="120" x="1205" y="500" as="geometry" />
+          <mxGeometry height="60" width="120" x="1005" y="540" as="geometry" />
         </mxCell>
         <mxCell id="0a0ofz-E8oe2l0loChPp-2" edge="1" parent="1" source="0a0ofz-E8oe2l0loChPp-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;" target="t8skYRUXIG7qXgkfOcBk-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-4" edge="1" parent="1" source="QQl_j3vab_P8fc_EClPV-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeWidth=2;" target="QQl_j3vab_P8fc_EClPV-3">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;S3 lake&lt;/font&gt;&lt;/b&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Хранение всей истории кликов&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="190" x="920" y="795" as="geometry" />
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-2" edge="1" parent="1" source="8UIAFC9thic4XI14_rR6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="QQl_j3vab_P8fc_EClPV-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-6" connectable="0" parent="QQl_j3vab_P8fc_EClPV-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-size: 12px; text-align: left; text-wrap-mode: wrap; background-color: rgb(236, 236, 236);&quot;&gt;S3 Sink Connector&lt;/span&gt;" vertex="1">
-          <mxGeometry relative="1" x="-0.44" y="4" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;b&gt;Apache Spark&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Перерасчет всей истории&lt;br&gt;Агрегация по более длительным интервалам, например за сутки&lt;/font&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="75" width="160" x="1180" y="797.5" as="geometry" />
-        </mxCell>
-        <mxCell id="QQl_j3vab_P8fc_EClPV-5" edge="1" parent="1" source="QQl_j3vab_P8fc_EClPV-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;curved=1;strokeWidth=2;" target="t8skYRUXIG7qXgkfOcBk-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="QQl_j3vab_P8fc_EClPV-7" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Получение креатива и ссылки для клика&lt;/h1&gt;&lt;p&gt;Убираем из приложения встроенный sdk, вместо него самостоятельно ходим на api ad провайдера, берем у него creative_url и click_url&lt;/p&gt;" vertex="1">

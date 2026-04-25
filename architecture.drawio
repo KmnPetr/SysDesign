@@ -1,4 +1,4 @@
-<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="6">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.6 Chrome/140.0.7339.249 Electron/38.8.0 Safari/537.36" version="29.3.6" pages="7">
   <diagram name="main" id="WavlXpf9AdyNdB_6igc2">
     <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -2252,6 +2252,258 @@
         </mxCell>
         <mxCell id="QQl_j3vab_P8fc_EClPV-17" parent="1" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Логирование клика по трекинговой ссылке&lt;/h1&gt;" vertex="1">
           <mxGeometry height="50" width="570" x="20" y="260" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="ExDcB3sTIigObnDJH_-X" name="messenger">
+    <mxGraphModel dx="1213" dy="756" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="1240" width="950" x="120" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-25" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" value="Users" vertex="1">
+          <mxGeometry height="240" width="850" x="160" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-26" parent="f-TtbKJ5oPjB-tO_-69d-25" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-27" parent="f-TtbKJ5oPjB-tO_-69d-26" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;strokeColor=inherit;fontSize=16;" value="id: bigint" vertex="1">
+          <mxGeometry height="30" width="232" as="geometry">
+            <mxRectangle height="30" width="232" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-28" parent="f-TtbKJ5oPjB-tO_-69d-26" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="посмотреть как шардировать таблицу юзеров" vertex="1">
+          <mxGeometry height="30" width="618" x="232" as="geometry">
+            <mxRectangle height="30" width="618" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-29" parent="f-TtbKJ5oPjB-tO_-69d-25" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-30" parent="f-TtbKJ5oPjB-tO_-69d-29" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="chats: bigint[ ]" vertex="1">
+          <mxGeometry height="30" width="232" as="geometry">
+            <mxRectangle height="30" width="232" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-31" parent="f-TtbKJ5oPjB-tO_-69d-29" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="просто номера или с допинфой?" vertex="1">
+          <mxGeometry height="30" width="618" x="232" as="geometry">
+            <mxRectangle height="30" width="618" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-32" parent="f-TtbKJ5oPjB-tO_-69d-25" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="60" width="850" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-33" parent="f-TtbKJ5oPjB-tO_-69d-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="blocked_users: bigint[ ]" vertex="1">
+          <mxGeometry height="60" width="232" as="geometry">
+            <mxRectangle height="60" width="232" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-34" parent="f-TtbKJ5oPjB-tO_-69d-32" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="при чтении из бд могут приходить сообщения опонента но не отображаться в UI" vertex="1">
+          <mxGeometry height="60" width="618" x="232" as="geometry">
+            <mxRectangle height="60" width="618" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-50" parent="f-TtbKJ5oPjB-tO_-69d-25" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="90" width="850" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-51" parent="f-TtbKJ5oPjB-tO_-69d-50" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="blocked_by: bigint[ ]" vertex="1">
+          <mxGeometry height="90" width="232" as="geometry">
+            <mxRectangle height="90" width="232" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-52" parent="f-TtbKJ5oPjB-tO_-69d-50" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="неконсист. поле, при создании новое сообщение на апи откллоняется при чтении jwt токена, user метаинформации" vertex="1">
+          <mxGeometry height="90" width="618" x="232" as="geometry">
+            <mxRectangle height="90" width="618" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-53" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" value="Chats" vertex="1">
+          <mxGeometry height="350" width="850" x="160" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-54" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-55" parent="f-TtbKJ5oPjB-tO_-69d-54" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;strokeColor=inherit;fontSize=16;" value="id: bigint" vertex="1">
+          <mxGeometry height="30" width="230" as="geometry">
+            <mxRectangle height="30" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-56" parent="f-TtbKJ5oPjB-tO_-69d-54" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="посмотреть как шардировать таблицу чатов как и юзеров" vertex="1">
+          <mxGeometry height="30" width="620" x="230" as="geometry">
+            <mxRectangle height="30" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-57" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="70" width="850" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-58" parent="f-TtbKJ5oPjB-tO_-69d-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="type: varchar" vertex="1">
+          <mxGeometry height="70" width="230" as="geometry">
+            <mxRectangle height="70" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-59" parent="f-TtbKJ5oPjB-tO_-69d-57" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="private (2 собеседника) / group ( много юзеров, но правила регламентируются админами )" vertex="1">
+          <mxGeometry height="70" width="620" x="230" as="geometry">
+            <mxRectangle height="70" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-60" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="40" width="850" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-61" parent="f-TtbKJ5oPjB-tO_-69d-60" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="users: bigint[ ]" vertex="1">
+          <mxGeometry height="40" width="230" as="geometry">
+            <mxRectangle height="40" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-62" parent="f-TtbKJ5oPjB-tO_-69d-60" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="2 юзера в приватном чате, много в группе" vertex="1">
+          <mxGeometry height="40" width="620" x="230" as="geometry">
+            <mxRectangle height="40" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-63" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="850" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-64" parent="f-TtbKJ5oPjB-tO_-69d-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="bloked_users: bigint[ ]" vertex="1">
+          <mxGeometry height="40" width="230" as="geometry">
+            <mxRectangle height="40" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-65" parent="f-TtbKJ5oPjB-tO_-69d-63" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="заблокированные пользователи приватного чата или группы" vertex="1">
+          <mxGeometry height="40" width="620" x="230" as="geometry">
+            <mxRectangle height="40" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-66" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="40" width="850" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-67" parent="f-TtbKJ5oPjB-tO_-69d-66" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="meta: text" vertex="1">
+          <mxGeometry height="40" width="230" as="geometry">
+            <mxRectangle height="40" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-68" parent="f-TtbKJ5oPjB-tO_-69d-66" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="json с метаинформацией, кто админы, картинка чата, описание, название и др." vertex="1">
+          <mxGeometry height="40" width="620" x="230" as="geometry">
+            <mxRectangle height="40" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-69" parent="f-TtbKJ5oPjB-tO_-69d-53" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="100" width="850" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-70" parent="f-TtbKJ5oPjB-tO_-69d-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="&lt;span class=&quot;YPkS7KbdpWfGdYKd3QB9&quot; data-src-align=&quot;0:5&quot; style=&quot;white-space-collapse: preserve;&quot;&gt;shards: bigint[ ]&lt;/span&gt;" vertex="1">
+          <mxGeometry height="100" width="230" as="geometry">
+            <mxRectangle height="100" width="230" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-71" parent="f-TtbKJ5oPjB-tO_-69d-69" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="&lt;ul&gt;&lt;li&gt;если пользователи в одном городе 1 шард&lt;/li&gt;&lt;li&gt;если в разных регионах возможно дуплицирование чата&lt;/li&gt;&lt;li&gt;для групп может быть по одному чату в регионе&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="100" width="620" x="230" as="geometry">
+            <mxRectangle height="100" width="620" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-72" parent="1" style="shape=table;startSize=30;container=1;collapsible=0;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=0;strokeColor=default;fontSize=16;" value="Messages" vertex="1">
+          <mxGeometry height="380" width="850" x="160" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-73" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-74" parent="f-TtbKJ5oPjB-tO_-69d-73" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;pointerEvents=1;strokeColor=inherit;fontSize=16;" value="shard_id: int" vertex="1">
+          <mxGeometry height="30" width="290" as="geometry">
+            <mxRectangle height="30" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-75" parent="f-TtbKJ5oPjB-tO_-69d-73" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="номер шарда" vertex="1">
+          <mxGeometry height="30" width="560" x="290" as="geometry">
+            <mxRectangle height="30" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-76" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-77" parent="f-TtbKJ5oPjB-tO_-69d-76" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="local_id: bigint" vertex="1">
+          <mxGeometry height="30" width="290" as="geometry">
+            <mxRectangle height="30" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-78" parent="f-TtbKJ5oPjB-tO_-69d-76" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="инкремент внутри шарда" vertex="1">
+          <mxGeometry height="30" width="560" x="290" as="geometry">
+            <mxRectangle height="30" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-79" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="850" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-80" parent="f-TtbKJ5oPjB-tO_-69d-79" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="PRIMARY KEY (shard_id, local_id)" vertex="1">
+          <mxGeometry height="30" width="290" as="geometry">
+            <mxRectangle height="30" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-81" parent="f-TtbKJ5oPjB-tO_-69d-79" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="30" width="560" x="290" as="geometry">
+            <mxRectangle height="30" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-88" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="30" width="850" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-89" parent="f-TtbKJ5oPjB-tO_-69d-88" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="chat_id: bigint" vertex="1">
+          <mxGeometry height="30" width="290" as="geometry">
+            <mxRectangle height="30" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-90" parent="f-TtbKJ5oPjB-tO_-69d-88" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="имеет индекс" vertex="1">
+          <mxGeometry height="30" width="560" x="290" as="geometry">
+            <mxRectangle height="30" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-82" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="60" width="850" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-83" parent="f-TtbKJ5oPjB-tO_-69d-82" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="text: varchar(500)" vertex="1">
+          <mxGeometry height="60" width="290" as="geometry">
+            <mxRectangle height="60" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-84" parent="f-TtbKJ5oPjB-tO_-69d-82" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="500 кириллица -&amp;gt; 1000байт, 500 иерогл. -&amp;gt; 1500байт.&lt;div&gt;При 2000байт -&amp;gt; TOAST&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="560" x="290" as="geometry">
+            <mxRectangle height="60" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-85" parent="f-TtbKJ5oPjB-tO_-69d-72" style="shape=tableRow;horizontal=0;startSize=0;swimlaneHead=0;swimlaneBody=0;top=0;left=0;bottom=0;right=0;collapsible=0;dropTarget=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeColor=inherit;fontSize=16;" vertex="1">
+          <mxGeometry height="170" width="850" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-86" parent="f-TtbKJ5oPjB-tO_-69d-85" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;overflow=hidden;strokeColor=inherit;fontSize=16;" value="meta: text" vertex="1">
+          <mxGeometry height="170" width="290" as="geometry">
+            <mxRectangle height="170" width="290" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-87" parent="f-TtbKJ5oPjB-tO_-69d-85" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;strokeColor=inherit;fontSize=16;" value="&lt;ul&gt;&lt;li&gt;вложения (ссылки на изображения, файлы)&lt;/li&gt;&lt;li&gt;дата&lt;/li&gt;&lt;li&gt;прочитано / не прочитано&lt;/li&gt;&lt;li&gt;zip / info ( использовалось ли сжатие, есть ли служебная информация )&lt;/li&gt;&lt;li&gt;редактировано&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="170" width="560" x="290" as="geometry">
+            <mxRectangle height="170" width="560" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-96" parent="1" style="swimlane;whiteSpace=wrap;html=1;" value="пример набора сообщений" vertex="1">
+          <mxGeometry height="530" width="760" x="1120" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-97" parent="f-TtbKJ5oPjB-tO_-69d-96" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;ul&gt;&lt;li&gt;Ваня все еще может физически написать в api, БД не проверяет входящие сообщения на наличие блокировок&lt;/li&gt;&lt;li&gt;но Маше сообщения не показываются или фильтруются на стороне api на основе поля bloked_users в jwt Маши&lt;/li&gt;&lt;li&gt;в случае многопользовательской группы сообщения фильтруются на основе blocked_users в данных группы&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="110" width="740" x="10" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-91" parent="f-TtbKJ5oPjB-tO_-69d-96" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="ZIP: группа сообщений сжата и сохранена в Toast или SDN" vertex="1">
+          <mxGeometry height="50" width="560" x="10" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-92" parent="f-TtbKJ5oPjB-tO_-69d-96" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Ваня:&lt;div&gt;Привет, как дела?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="559" x="10" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-93" parent="f-TtbKJ5oPjB-tO_-69d-96" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Маша:&lt;div&gt;Привет, все отлично：)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="50" width="559" x="10" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-94" parent="f-TtbKJ5oPjB-tO_-69d-96" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="Ваня: Ты сегодня прекрасно выглядишь" vertex="1">
+          <mxGeometry height="50" width="559" x="10" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-95" parent="f-TtbKJ5oPjB-tO_-69d-96" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="INFO: Маша bloked Ваню" vertex="1">
+          <mxGeometry height="50" width="560" x="10" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="f-TtbKJ5oPjB-tO_-69d-98" parent="f-TtbKJ5oPjB-tO_-69d-96" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;ul&gt;&lt;li&gt;все сообщения написанные 2 суток назад или при превышении 100 штук храняться одной записью в БД как zip текст в Toast или SDN&lt;/li&gt;&lt;li&gt;плюсы: опцию можно настроить позже, позволяет не раздувать индекс на chat_id&lt;/li&gt;&lt;li&gt;минусы: требует реализации на клиенте распаковки zip и своевременного обновления клиента&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="60" width="730" x="10" y="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

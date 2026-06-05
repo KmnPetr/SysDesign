@@ -1,0 +1,51 @@
+CREATE TABLE users (
+       id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+       username        VARCHAR(255) NOT NULL,
+       created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+       updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE chats (
+       id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+       type            VARCHAR(16) NOT NULL,
+       title           VARCHAR(255),
+       last_msg_id     BIGINT,
+       created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+       updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE messages (
+      id              BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+      chat_id         BIGINT NOT NULL REFERENCES chats (id) ON DELETE CASCADE,
+      user_id         BIGINT NOT NULL REFERENCES users (id) ON DELETE RESTRICT,
+      text            TEXT NOT NULL,
+      created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_messages_chat_created_at ON messages (chat_id, created_at DESC);
+
+CREATE TABLE users_chats (
+     user_id     BIGINT NOT NULL REFERENCES users (id) ON DELETE CASCADE,
+     chat_id     BIGINT NOT NULL REFERENCES chats (id) ON DELETE CASCADE,
+
+     role        VARCHAR(16),
+     is_banned   BOOLEAN,
+     last_read_msg_id BIGINT,
+
+     PRIMARY KEY (user_id, chat_id)
+);
+
+CREATE INDEX idx_users_chats_chat_id ON users_chats (chat_id);
+
+
+
+-- Петя * Маша -> messages 1,2,3
+-- Петя * Ваня -> messages 4,5,6
+-- чужой чат -> messages 7,8,9
+-- Петя * Маша -> messages 10,11,12
+-- Петя * Ваня -> messages 13,14,15
+
+
+-- Петя*Маша users_chats.last_read_msg_id = 3
+-- Петя*Ваня users_chats.last_read_msg_id = 3

@@ -16,11 +16,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class MessagesCreator {
     private static final String MESSAGES_RESOURCE = "examples/messages.json";
+    private static final int PARALLEL_BATCH_COUNT = 10;
     private static final List<String> exampleMessages = new ArrayList<>();
     private static int totalRandomCount;
 
@@ -49,6 +52,7 @@ public class MessagesCreator {
         }
 
         List<Message> batch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
+        List<List<Message>> pendingBatches = new ArrayList<>(PARALLEL_BATCH_COUNT);
         int saved = 0;
 
         while (true) {
@@ -75,19 +79,58 @@ public class MessagesCreator {
                 }
 
                 if (batch.size() == LoadtestApplication.BATCH_SIZE) {
-                    saveBatch(batch);
-                    saved += batch.size();
+                    pendingBatches.add(new ArrayList<>(batch));
                     batch.clear();
-                    printProgress(saved, totalRandomCount);
+                    if (pendingBatches.size() == PARALLEL_BATCH_COUNT) {
+                        saved += saveBatchesParallel(pendingBatches);
+                        pendingBatches.clear();
+                        printProgress(saved, totalRandomCount);
+                    }
                 }
             }
         }
 
         if (!batch.isEmpty()) {
-            saveBatch(batch);
-            saved += batch.size();
+            pendingBatches.add(new ArrayList<>(batch));
+        }
+        if (!pendingBatches.isEmpty()) {
+            saved += saveBatchesParallel(pendingBatches);
             printProgress(saved, totalRandomCount);
         }
+    }
+
+    private int saveBatchesParallel(List<List<Message>> batches) {
+        int batchCount = batches.size();
+        CountDownLatch latch = new CountDownLatch(batchCount);
+        AtomicReference<RuntimeException> error = new AtomicReference<>();
+        Thread[] threads = new Thread[batchCount];
+
+        for (int i = 0; i < batchCount; i++) {
+            List<Message> batch = batches.get(i);
+            threads[i] = new Thread(() -> {
+                try {
+                    saveBatch(batch);
+                } catch (RuntimeException e) {
+                    error.compareAndSet(null, e);
+                } finally {
+                    latch.countDown();
+                }
+            }, "message-batch-writer-" + i);
+            threads[i].start();
+        }
+
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Interrupted while saving message batches", e);
+        }
+
+        if (error.get() != null) {
+            throw error.get();
+        }
+
+        return batches.stream().mapToInt(List::size).sum();
     }
 
     private void saveBatch(List<Message> batch) {

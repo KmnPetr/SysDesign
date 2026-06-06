@@ -12,7 +12,7 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 @SpringBootApplication
 public class LoadtestApplication {
-	public static int COUNT_USERS = 1000;
+	public static int COUNT_USERS = 10000;
 	public static int BATCH_SIZE = 1000;
 	public static int MIN_OWN_CHAT = 1;
 	public static int MAX_OWN_CHAT = 10;

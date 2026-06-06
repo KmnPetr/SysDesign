@@ -1,6 +1,6 @@
 package com.messenger.loadtest.controller;
 
-import com.messenger.loadtest.models.User;
+import com.messenger.loadtest.dto.UserChatsResponse;
 import com.messenger.loadtest.service.UserService;
 import jakarta.annotation.PostConstruct;
 import jakarta.persistence.EntityManager;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
@@ -55,23 +54,23 @@ public class UserController {
     }
 
     @GetMapping("/random")
-    public ResponseEntity<User> getRandomUser() {
+    public ResponseEntity<UserChatsResponse> getRandomUser() {
         if (MAX_USER_ID == 0L) {
             return ResponseEntity.notFound().build();
         }
         for (int attempt = 0; attempt < 10; attempt++) {
             long randomId = ThreadLocalRandom.current().nextLong(MIN_USER_ID, MAX_USER_ID + 1);
-            Optional<User> user = userService.getUserById(randomId);
-            if (user.isPresent()) {
-                return ResponseEntity.ok(user.get());
+            var response = userService.getUserWithChats(randomId);
+            if (response.isPresent()) {
+                return ResponseEntity.ok(response.get());
             }
         }
         return ResponseEntity.notFound().build();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id) {
-        return userService.getUserById(id)
+    public ResponseEntity<UserChatsResponse> getUser(@PathVariable Long id) {
+        return userService.getUserWithChats(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class LoadtestApplication {
-	public static int COUNT_USERS = 1000;
+	public static int COUNT_USERS = 2000;
 	public static int BATCH_SIZE = 1000;
 	public static int MIN_OWN_CHAT = 1;
 	public static int MAX_OWN_CHAT = 10;

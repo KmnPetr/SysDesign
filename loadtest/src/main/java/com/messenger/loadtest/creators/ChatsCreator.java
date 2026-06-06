@@ -34,6 +34,8 @@ public class ChatsCreator {
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
     private final ExistingIdOffsets existingIdOffsets;
+    private int savedChatsCount;
+    private int savedUserChatsCount;
 
     public ChatsCreator(
             ChatRepository chatRepository,
@@ -52,6 +54,8 @@ public class ChatsCreator {
     public void createChatsAndUsersChats() {
         createShaffleChatsIds(UserCreator.shaffleUsers.size());
         savedChatIds.clear();
+        savedChatsCount = 0;
+        savedUserChatsCount = 0;
 
         List<Chat> chatBatch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
         List<UserChat> userChatBatch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
@@ -113,6 +117,7 @@ public class ChatsCreator {
             int currentUserIndex
     ) {
         if (!pendingChatBatches.isEmpty()) {
+            savedChatsCount += countItems(pendingChatBatches);
             saveChatBatchesParallel(pendingChatBatches);
             for (List<Chat> batch : pendingChatBatches) {
                 for (Chat chat : batch) {
@@ -120,12 +125,19 @@ public class ChatsCreator {
                 }
             }
             pendingChatBatches.clear();
-            printProgress("Chats", currentUserIndex + 1, UserCreator.shaffleUsers.size());
         }
         if (!pendingUserChatBatches.isEmpty()) {
+            savedUserChatsCount += countItems(pendingUserChatBatches);
             saveUserChatBatchesParallel(pendingUserChatBatches);
             pendingUserChatBatches.clear();
         }
+        if (savedChatsCount > 0 || savedUserChatsCount > 0) {
+            printProgress("Chat UserChat", currentUserIndex + 1, UserCreator.shaffleUsers.size());
+        }
+    }
+
+    private <T> int countItems(List<List<T>> batches) {
+        return batches.stream().mapToInt(List::size).sum();
     }
 
     private void saveChatBatchesParallel(List<List<Chat>> batches) {
@@ -204,7 +216,10 @@ public class ChatsCreator {
 
     private void printProgress(String label, int processed, int total) {
         double percent = processed * 100.0 / total;
-        System.out.printf("%s: %.2f%% (%d / %d)%n", label, percent, processed, total);
+        System.out.printf(
+                "%s: %.2f%% (%d / %d) Chat=%d UserChat=%d%n",
+                label, percent, processed, total, savedChatsCount, savedUserChatsCount
+        );
         System.out.flush();
     }
 

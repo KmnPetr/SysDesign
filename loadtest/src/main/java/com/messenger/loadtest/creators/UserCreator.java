@@ -2,6 +2,7 @@ package com.messenger.loadtest.creators;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.messenger.loadtest.ExistingIdOffsets;
 import com.messenger.loadtest.LoadtestApplication;
 import com.messenger.loadtest.models.User;
 import com.messenger.loadtest.repositories.UserRepository;
@@ -28,15 +29,18 @@ public class UserCreator {
     private final UserRepository userRepository;
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
+    private final ExistingIdOffsets existingIdOffsets;
 
     public UserCreator(
             UserRepository userRepository,
             EntityManager entityManager,
-            PlatformTransactionManager transactionManager
+            PlatformTransactionManager transactionManager,
+            ExistingIdOffsets existingIdOffsets
     ) {
         this.userRepository = userRepository;
         this.entityManager = entityManager;
         this.transactionTemplate = new TransactionTemplate(transactionManager);
+        this.existingIdOffsets = existingIdOffsets;
     }
 
     public void createUsersInDB(int count) {
@@ -90,7 +94,8 @@ public class UserCreator {
 
     private void prepareShuffledIds(int count) {
         shaffleUsersIds.clear();
-        for (long id = 1; id <= count; id++) {
+        long startId = existingIdOffsets.getMaxUserId();
+        for (long id = startId + 1; id <= startId + count; id++) {
             shaffleUsersIds.add(id);
         }
         Collections.shuffle(shaffleUsersIds);

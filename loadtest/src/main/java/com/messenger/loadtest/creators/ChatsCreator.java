@@ -1,5 +1,6 @@
 package com.messenger.loadtest.creators;
 
+import com.messenger.loadtest.ExistingIdOffsets;
 import com.messenger.loadtest.LoadtestApplication;
 import com.messenger.loadtest.models.Chat;
 import com.messenger.loadtest.models.User;
@@ -32,17 +33,20 @@ public class ChatsCreator {
     private final UserChatRepository userChatRepository;
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
+    private final ExistingIdOffsets existingIdOffsets;
 
     public ChatsCreator(
             ChatRepository chatRepository,
             UserChatRepository userChatRepository,
             EntityManager entityManager,
-            PlatformTransactionManager transactionManager
+            PlatformTransactionManager transactionManager,
+            ExistingIdOffsets existingIdOffsets
     ) {
         this.chatRepository = chatRepository;
         this.userChatRepository = userChatRepository;
         this.entityManager = entityManager;
         this.transactionTemplate = new TransactionTemplate(transactionManager);
+        this.existingIdOffsets = existingIdOffsets;
     }
 
     public void createChatsAndUsersChats() {
@@ -224,7 +228,8 @@ public class ChatsCreator {
         int count = (int) Math.ceil(countCreatedUsers * avgChatsPerUser * 1.5);
         shaffleChatsIds.clear();
         nextChatIdIndex = 0;
-        for (long id = 1; id <= count; id++) {
+        long startId = existingIdOffsets.getMaxChatId();
+        for (long id = startId + 1; id <= startId + count; id++) {
             shaffleChatsIds.add(id);
         }
         Collections.shuffle(shaffleChatsIds);

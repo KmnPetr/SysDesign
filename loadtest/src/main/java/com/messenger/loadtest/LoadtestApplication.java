@@ -24,6 +24,7 @@ public class LoadtestApplication {
 
 
 		if (true){
+			context.getBean(ExistingIdOffsets.class);
 			UserCreator userCreator = context.getBean(UserCreator.class);
 			ChatsCreator chatsCreator = context.getBean(ChatsCreator.class);
 			MessagesCreator messagesCreator = context.getBean(MessagesCreator.class);

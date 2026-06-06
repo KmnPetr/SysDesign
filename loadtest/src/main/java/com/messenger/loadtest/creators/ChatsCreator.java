@@ -14,10 +14,16 @@ import org.springframework.transaction.support.TransactionTemplate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class ChatsCreator {
+    private static final int PARALLEL_USER_CHAT_BATCH_COUNT = 10;
+    private static final int PARALLEL_CHAT_BATCH_COUNT = 5;
+
     private static final List<Long> shaffleChatsIds = new ArrayList<>();
     public static final List<Long> savedChatIds = new ArrayList<>();
     private static int nextChatIdIndex = 0;
@@ -45,6 +51,8 @@ public class ChatsCreator {
 
         List<Chat> chatBatch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
         List<UserChat> userChatBatch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
+        List<List<Chat>> pendingChatBatches = new ArrayList<>(PARALLEL_CHAT_BATCH_COUNT);
+        List<List<UserChat>> pendingUserChatBatches = new ArrayList<>(PARALLEL_USER_CHAT_BATCH_COUNT);
 
         for (int i = 0; i < UserCreator.shaffleUsers.size(); i++) {
             User user = UserCreator.shaffleUsers.get(i);
@@ -60,22 +68,99 @@ public class ChatsCreator {
                 addUserChats(user, nextUser, chat.getId(), userChatBatch);
 
                 if (chatBatch.size() == LoadtestApplication.BATCH_SIZE) {
-                    saveChatBatch(chatBatch, i);
+                    pendingChatBatches.add(new ArrayList<>(chatBatch));
                     chatBatch.clear();
                 }
-                flushUserChatBatchIfFull(userChatBatch, chatBatch, i);
+                if (userChatBatch.size() == LoadtestApplication.BATCH_SIZE) {
+                    pendingUserChatBatches.add(new ArrayList<>(userChatBatch));
+                    userChatBatch.clear();
+                }
+                if (shouldFlush(pendingChatBatches, pendingUserChatBatches)) {
+                    flushPendingBatches(pendingChatBatches, pendingUserChatBatches, i);
+                }
             }
         }
 
         if (!chatBatch.isEmpty()) {
-            saveChatBatch(chatBatch, UserCreator.shaffleUsers.size() - 1);
-            chatBatch.clear();
+            pendingChatBatches.add(new ArrayList<>(chatBatch));
         }
         if (!userChatBatch.isEmpty()) {
-            saveUserChatBatch(userChatBatch);
+            pendingUserChatBatches.add(new ArrayList<>(userChatBatch));
+        }
+        if (!pendingChatBatches.isEmpty() || !pendingUserChatBatches.isEmpty()) {
+            flushPendingBatches(
+                    pendingChatBatches,
+                    pendingUserChatBatches,
+                    UserCreator.shaffleUsers.size() - 1
+            );
         }
 
         resetChatsIdSequence();
+    }
+
+    private boolean shouldFlush(List<List<Chat>> pendingChatBatches, List<List<UserChat>> pendingUserChatBatches) {
+        return pendingUserChatBatches.size() >= PARALLEL_USER_CHAT_BATCH_COUNT
+                || pendingChatBatches.size() >= PARALLEL_CHAT_BATCH_COUNT;
+    }
+
+    private void flushPendingBatches(
+            List<List<Chat>> pendingChatBatches,
+            List<List<UserChat>> pendingUserChatBatches,
+            int currentUserIndex
+    ) {
+        if (!pendingChatBatches.isEmpty()) {
+            saveChatBatchesParallel(pendingChatBatches);
+            for (List<Chat> batch : pendingChatBatches) {
+                for (Chat chat : batch) {
+                    savedChatIds.add(chat.getId());
+                }
+            }
+            pendingChatBatches.clear();
+            printProgress("Chats", currentUserIndex + 1, UserCreator.shaffleUsers.size());
+        }
+        if (!pendingUserChatBatches.isEmpty()) {
+            saveUserChatBatchesParallel(pendingUserChatBatches);
+            pendingUserChatBatches.clear();
+        }
+    }
+
+    private void saveChatBatchesParallel(List<List<Chat>> batches) {
+        runBatchesParallel(batches, this::saveChatBatch);
+    }
+
+    private void saveUserChatBatchesParallel(List<List<UserChat>> batches) {
+        runBatchesParallel(batches, this::saveUserChatBatch);
+    }
+
+    private <T> void runBatchesParallel(List<List<T>> batches, Consumer<List<T>> saver) {
+        int batchCount = batches.size();
+        CountDownLatch latch = new CountDownLatch(batchCount);
+        AtomicReference<RuntimeException> error = new AtomicReference<>();
+
+        for (int i = 0; i < batchCount; i++) {
+            List<T> batch = batches.get(i);
+            Thread thread = new Thread(() -> {
+                try {
+                    saver.accept(batch);
+                } catch (RuntimeException e) {
+                    error.compareAndSet(null, e);
+                } finally {
+                    latch.countDown();
+                }
+            }, "chat-batch-writer-" + i);
+            thread.start();
+        }
+
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new IllegalStateException("Interrupted while saving chat batches", e);
+        }
+
+        if (error.get() != null) {
+            throw error.get();
+        }
     }
 
     private Chat createPrivateChat(User user, User nextUser) {
@@ -97,32 +182,12 @@ public class ChatsCreator {
         userChatBatch.add(new UserChat(new UserChat.Id(nextUser.getId(), chatId), null, null, null));
     }
 
-    private void flushUserChatBatchIfFull(List<UserChat> userChatBatch, List<Chat> chatBatch, int currentUserIndex) {
-        while (userChatBatch.size() >= LoadtestApplication.BATCH_SIZE) {
-            savePendingChatBatch(chatBatch, currentUserIndex);
-            List<UserChat> batch = new ArrayList<>(userChatBatch.subList(0, LoadtestApplication.BATCH_SIZE));
-            saveUserChatBatch(batch);
-            userChatBatch.subList(0, LoadtestApplication.BATCH_SIZE).clear();
-        }
-    }
-
-    private void savePendingChatBatch(List<Chat> chatBatch, int currentUserIndex) {
-        if (!chatBatch.isEmpty()) {
-            saveChatBatch(chatBatch, currentUserIndex);
-            chatBatch.clear();
-        }
-    }
-
-    private void saveChatBatch(List<Chat> chatBatch, int currentUserIndex) {
+    private void saveChatBatch(List<Chat> chatBatch) {
         transactionTemplate.executeWithoutResult(status -> {
             chatRepository.saveAll(chatBatch);
             entityManager.flush();
             entityManager.clear();
         });
-        for (Chat chat : chatBatch) {
-            savedChatIds.add(chat.getId());
-        }
-        printProgress("Chats", currentUserIndex + 1, UserCreator.shaffleUsers.size());
     }
 
     private void saveUserChatBatch(List<UserChat> userChatBatch) {

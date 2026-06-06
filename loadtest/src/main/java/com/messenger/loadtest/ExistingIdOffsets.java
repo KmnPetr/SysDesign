@@ -7,15 +7,25 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 @Component
 public class ExistingIdOffsets {
-    private final long maxUserId;
-    private final long maxChatId;
+    private volatile long maxUserId;
+    private volatile long maxChatId;
+
+    private final EntityManager entityManager;
+    private final TransactionTemplate transactionTemplate;
 
     public ExistingIdOffsets(EntityManager entityManager, PlatformTransactionManager transactionManager) {
-        TransactionTemplate transactionTemplate = new TransactionTemplate(transactionManager);
-        Long usersMax = transactionTemplate.execute(status -> queryMaxId(entityManager, "users", "id"));
-        Long chatsMax = transactionTemplate.execute(status -> queryMaxId(entityManager, "chats", "id"));
-        this.maxUserId = usersMax == null ? 0L : usersMax;
-        this.maxChatId = chatsMax == null ? 0L : chatsMax;
+        this.entityManager = entityManager;
+        this.transactionTemplate = new TransactionTemplate(transactionManager);
+        refresh();
+    }
+
+    public void refresh() {
+        transactionTemplate.executeWithoutResult(status -> {
+            Long usersMax = queryMaxId("users", "id");
+            Long chatsMax = queryMaxId("chats", "id");
+            maxUserId = usersMax == null ? 0L : usersMax;
+            maxChatId = chatsMax == null ? 0L : chatsMax;
+        });
         System.out.printf("Существующие max id: users=%d, chats=%d%n", maxUserId, maxChatId);
         System.out.flush();
     }
@@ -28,7 +38,7 @@ public class ExistingIdOffsets {
         return maxChatId;
     }
 
-    private static Long queryMaxId(EntityManager entityManager, String tableName, String columnName) {
+    private Long queryMaxId(String tableName, String columnName) {
         Object result = entityManager.createNativeQuery(
                 "SELECT MAX(" + columnName + ") FROM " + tableName
         ).getSingleResult();

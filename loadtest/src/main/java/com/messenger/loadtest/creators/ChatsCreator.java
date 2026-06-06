@@ -52,6 +52,7 @@ public class ChatsCreator {
     }
 
     public void createChatsAndUsersChats() {
+        existingIdOffsets.refresh();
         createShaffleChatsIds(UserCreator.shaffleUsers.size());
         savedChatIds.clear();
         savedChatsCount = 0;

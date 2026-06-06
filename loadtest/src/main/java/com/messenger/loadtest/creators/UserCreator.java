@@ -44,6 +44,7 @@ public class UserCreator {
     }
 
     public void createUsersInDB(int count) {
+        existingIdOffsets.refresh();
         initExamples();
         prepareShuffledIds(count);
         shaffleUsers.clear();

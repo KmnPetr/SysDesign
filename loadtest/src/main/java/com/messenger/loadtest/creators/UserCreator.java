@@ -1,7 +1,8 @@
-package com.messenger.loadtest;
+package com.messenger.loadtest.creators;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.messenger.loadtest.LoadtestApplication;
 import com.messenger.loadtest.models.User;
 import com.messenger.loadtest.repositories.UserRepository;
 import jakarta.persistence.EntityManager;

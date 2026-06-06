@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
 
+import java.util.Locale;
+
 @Component
 public class WriteLoop implements ApplicationRunner {
     public static volatile boolean STOP;
@@ -70,7 +72,7 @@ public class WriteLoop implements ApplicationRunner {
         Long minId = minColumn(tableName, idColumn);
         Long maxId = maxColumn(tableName, idColumn);
         String idStats = String.format("(id min=%s, max=%s)", formatId(minId), formatId(maxId));
-        printStatRow(tableName, String.valueOf(count), idStats);
+        printStatRow(tableName, formatNumber(count), idStats);
     }
 
     private void printUsersChatsStat() {
@@ -83,7 +85,11 @@ public class WriteLoop implements ApplicationRunner {
                 "(user_id min=%s, max=%s; chat_id min=%s, max=%s)",
                 formatId(minUserId), formatId(maxUserId), formatId(minChatId), formatId(maxChatId)
         );
-        printStatRow("users_chats", String.valueOf(count), idStats);
+        printStatRow("users_chats", formatNumber(count), idStats);
+    }
+
+    private static String formatNumber(long value) {
+        return String.format(Locale.US, "%,d", value).replace(',', '_');
     }
 
     private static String formatId(Long id) {

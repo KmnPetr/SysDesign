@@ -18,9 +18,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 @Component
 public class UserCreator {
-    private static final int BATCH_SIZE = 1000;
     private static final String USERS_RESOURCE = "examples/users.json";
     private static final List<Long> shaffleUsersIds = new ArrayList<>();
+    public static final List<User> shaffleUsers = new ArrayList<>();
 
     private List<User> examplesUsers = new ArrayList<>();
 
@@ -41,8 +41,9 @@ public class UserCreator {
     public void createUsersInDB(int count) {
         initExamples();
         prepareShuffledIds(count);
+        shaffleUsers.clear();
 
-        List<User> batch = new ArrayList<>(BATCH_SIZE);
+        List<User> batch = new ArrayList<>(LoadtestApplication.BATCH_SIZE);
         int saved = 0;
 
         for (int i = 0; i < count; i++) {
@@ -50,7 +51,7 @@ public class UserCreator {
             user.setId(shaffleUsersIds.get(i));
             batch.add(user);
 
-            if (batch.size() == BATCH_SIZE) {
+            if (batch.size() == LoadtestApplication.BATCH_SIZE) {
                 saveBatch(batch);
                 saved += batch.size();
                 batch.clear();
@@ -104,6 +105,7 @@ public class UserCreator {
             entityManager.flush();
             entityManager.clear();
         });
+        shaffleUsers.addAll(batch);
     }
 
     private void printProgress(String label, int saved, int total) {

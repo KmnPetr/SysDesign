@@ -1,6 +1,7 @@
 package com.messenger.loadtest;
 
 import com.messenger.loadtest.creators.ChatsCreator;
+import com.messenger.loadtest.creators.MessagesCreator;
 import com.messenger.loadtest.creators.UserCreator;
 import jakarta.persistence.EntityManager;
 import org.springframework.boot.SpringApplication;
@@ -11,12 +12,12 @@ import org.springframework.transaction.support.TransactionTemplate;
 
 @SpringBootApplication
 public class LoadtestApplication {
-	public static int COUNT_USERS = 10;
-	public static int BATCH_SIZE = 500;
+	public static int COUNT_USERS = 1000;
+	public static int BATCH_SIZE = 1000;
 	public static int MIN_OWN_CHAT = 1;
-	public static int MAX_OWN_CHAT = 20;
+	public static int MAX_OWN_CHAT = 10;
 	public static int MIN_COUNT_MSG = 1;
-	public static int MAX_COUNT_MSG = 20;
+	public static int MAX_COUNT_MSG = 40;
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(LoadtestApplication.class, args);
@@ -25,9 +26,11 @@ public class LoadtestApplication {
 		if (true){
 			UserCreator userCreator = context.getBean(UserCreator.class);
 			ChatsCreator chatsCreator = context.getBean(ChatsCreator.class);
+			MessagesCreator messagesCreator = context.getBean(MessagesCreator.class);
 
 			userCreator.createUsersInDB(COUNT_USERS);
 			chatsCreator.createChatsAndUsersChats();
+			messagesCreator.createMessagesInDB();
 			printTableCounts(context);
 		} else {
 			deleteAllTables(context);

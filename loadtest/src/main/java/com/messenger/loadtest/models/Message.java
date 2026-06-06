@@ -22,13 +22,11 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "chat_id")
-    private Chat chat;
+    @Column(name = "chat_id", nullable = false)
+    private Long chatId;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "user_id")
+    private Long userId;
 
     @Column(nullable = false)
     private String text;

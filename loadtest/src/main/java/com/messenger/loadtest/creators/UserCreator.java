@@ -56,14 +56,14 @@ public class UserCreator {
                 saveBatch(batch);
                 saved += batch.size();
                 batch.clear();
-                printProgress("Записано", saved, count);
+                printProgress("Users", saved, count);
             }
         }
 
         if (!batch.isEmpty()) {
             saveBatch(batch);
             saved += batch.size();
-            printProgress("Записано", saved, count);
+            printProgress("Users", saved, count);
         }
 
         resetUsersIdSequence();

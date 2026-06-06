@@ -122,7 +122,7 @@ public class ChatsCreator {
         for (Chat chat : chatBatch) {
             savedChatIds.add(chat.getId());
         }
-        printProgress("Создано", currentUserIndex + 1, UserCreator.shaffleUsers.size());
+        printProgress("Chats", currentUserIndex + 1, UserCreator.shaffleUsers.size());
     }
 
     private void saveUserChatBatch(List<UserChat> userChatBatch) {

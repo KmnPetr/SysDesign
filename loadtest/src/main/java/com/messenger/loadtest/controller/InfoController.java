@@ -8,12 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
 public class InfoController {
+    private static final List<String> ENDPOINTS = List.of(
+            "GET http://localhost:4200/api/info",
+            "GET http://localhost:4200/api/users/{id}",
+            "GET http://localhost:4200/api/users/random",
+            "GET http://localhost:4200/api/messages/{chat_id}",
+            "GET http://localhost:4200/api/messages/random",
+            "GET http://localhost:4200/api/write/stop"
+    );
+
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
 
@@ -23,13 +33,14 @@ public class InfoController {
     }
 
     @GetMapping("/info")
-    public Map<String, String> getInfo() {
+    public Map<String, Object> getInfo() {
         return transactionTemplate.execute(status -> {
-            Map<String, String> info = new LinkedHashMap<>();
+            Map<String, Object> info = new LinkedHashMap<>();
             info.put("users", formatNumber(countRows("users")));
             info.put("chats", formatNumber(countRows("chats")));
             info.put("users_chats", formatNumber(countRows("users_chats")));
             info.put("messages", formatNumber(countRows("messages")));
+            info.put("endpoints", ENDPOINTS);
             return info;
         });
     }

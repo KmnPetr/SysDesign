@@ -1,3 +1,5 @@
+const CHART_HEIGHT = 250; // k6 web dashboard uPlot height
+
 export function buildChartsInjection(samples) {
     if (!samples || samples.length === 0) {
         return '';
@@ -15,13 +17,13 @@ export function buildChartsInjection(samples) {
 <section id="server-metrics-charts" style="margin:32px 24px 48px;font-family:sans-serif;color:#eee;">
     <h2 style="margin:0 0 8px;font-size:22px;">Метрики сервера (API)</h2>
     <p style="margin:0 0 20px;color:#aaa;">Точек: ${samples.length}, опрос 1 раз/с</p>
-    <div style="background:#1b1b1b;border-radius:12px;padding:16px;margin-bottom:24px;max-height:360px;">
+    <div style="margin-bottom:16px;height:${CHART_HEIGHT}px;">
         <canvas id="k6ServerCpuChart"></canvas>
     </div>
-    <div style="background:#1b1b1b;border-radius:12px;padding:16px;margin-bottom:24px;max-height:360px;">
+    <div style="margin-bottom:16px;height:${CHART_HEIGHT}px;">
         <canvas id="k6ServerRamChart"></canvas>
     </div>
-    <div style="background:#1b1b1b;border-radius:12px;padding:16px;margin-bottom:24px;max-height:360px;">
+    <div style="margin-bottom:16px;height:${CHART_HEIGHT}px;">
         <canvas id="k6ServerDiskChart"></canvas>
     </div>
 </section>

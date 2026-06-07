@@ -3,16 +3,7 @@
 
 import http from 'k6/http';
 import { check, group } from 'k6';
-import { Counter, Trend } from 'k6/metrics';
-
-// Встроенный web dashboard не разбивает http_req_* по тегу name.
-// Отдельные custom metrics — каждый эндпоинт виден на дашборде своей строкой.
-const usersRandomReqs = new Counter('endpoint_users_random_reqs');
-const messagesByChatReqs = new Counter('endpoint_messages_by_chat_reqs');
-const createMessageReqs = new Counter('endpoint_create_message_reqs');
-const usersRandomDuration = new Trend('endpoint_users_random_duration', true);
-const messagesByChatDuration = new Trend('endpoint_messages_by_chat_duration', true);
-const createMessageDuration = new Trend('endpoint_create_message_duration', true);
+import { Trend } from 'k6/metrics';
 
 const serverCpu = new Trend('server_cpu_percent');
 const serverRamCurrent = new Trend('server_ram_current_mb');
@@ -20,6 +11,7 @@ const serverRamMax = new Trend('server_ram_max_mb');
 const serverDiskSpeed = new Trend('server_disk_speed_mbps');
 
 const MESSAGES_TO_CREATE = 5;
+const TEST_DURATION = '30s';
 
 // Настройки теста
 // ramping-arrival-rate считает ИТЕРАЦИИ/с (1 итерация = 7 HTTP-запросов: 2 GET + 5 POST).
@@ -33,7 +25,7 @@ export const options = {
             preAllocatedVUs: 100,
             maxVUs: 7000,
             stages: [
-                { duration: '1m', target: 300 },
+                { duration: TEST_DURATION, target: 300 },
             ],
             gracefulStop: '30s',
         },
@@ -42,7 +34,7 @@ export const options = {
             exec: 'pollServerMetrics',
             rate: 1,
             timeUnit: '1s',
-            duration: '1m',
+            duration: TEST_DURATION,
             preAllocatedVUs: 1,
             maxVUs: 1,
             gracefulStop: '30s',
@@ -55,9 +47,6 @@ export const options = {
         'http_req_duration{name:users_random}': ['p(95)<500'],
         'http_req_duration{name:messages_by_chat}': ['p(95)<1000'],
         'http_req_duration{name:create_message}': ['p(95)<1000'],
-        'endpoint_users_random_duration': ['p(95)<500'],
-        'endpoint_messages_by_chat_duration': ['p(95)<1000'],
-        'endpoint_create_message_duration': ['p(95)<1000'],
         'server_cpu_percent': ['avg>=0'],
         'server_ram_current_mb': ['avg>=0'],
         'server_disk_speed_mbps': ['avg>=0'],
@@ -107,9 +96,6 @@ export default function () {
             ...requestParams,
             tags: { name: 'users_random' },
         });
-        usersRandomReqs.add(1);
-        usersRandomDuration.add(usersResponse.timings.duration);
-
         check(usersResponse, {
             'users_random: статус 200': (r) => r.status === 200,
             'users_random: есть chats': (r) => {
@@ -151,9 +137,6 @@ export default function () {
             ...requestParams,
             tags: { name: 'messages_by_chat' },
         });
-        messagesByChatReqs.add(1);
-        messagesByChatDuration.add(messagesResponse.timings.duration);
-
         check(messagesResponse, {
             'messages_by_chat: статус 200': (r) => r.status === 200,
             'messages_by_chat: есть messages': (r) => {
@@ -173,9 +156,6 @@ export default function () {
                 ...requestParams,
                 tags: { name: 'create_message' },
             });
-            createMessageReqs.add(1);
-            createMessageDuration.add(createResponse.timings.duration);
-
             check(createResponse, {
                 'create_message: статус 201': (r) => r.status === 201,
             });
@@ -194,20 +174,4 @@ export function handleSummary(data) {
     console.log(`⏱️  Среднее время ответа: ${data.metrics.http_req_duration.values.avg.toFixed(2)} мс`);
     console.log(`🐌 p95 время ответа: ${data.metrics.http_req_duration.values['p(95)'].toFixed(2)} мс`);
     console.log(`❌ Процент ошибок: ${(data.metrics.http_req_failed.values.rate * 100).toFixed(2)}%`);
-
-    const endpointStats = [
-        ['users_random', 'endpoint_users_random_reqs', 'endpoint_users_random_duration'],
-        ['messages_by_chat', 'endpoint_messages_by_chat_reqs', 'endpoint_messages_by_chat_duration'],
-        ['create_message', 'endpoint_create_message_reqs', 'endpoint_create_message_duration'],
-    ];
-    for (const [label, reqsMetric, durationMetric] of endpointStats) {
-        const reqs = data.metrics[reqsMetric]?.values;
-        const duration = data.metrics[durationMetric]?.values;
-        if (reqs && duration) {
-            console.log(`\n📍 ${label}:`);
-            console.log(`   запросов: ${reqs.count}`);
-            console.log(`   avg: ${duration.avg.toFixed(2)} мс, p95: ${duration['p(95)'].toFixed(2)} мс`);
-        }
-    }
-
 }

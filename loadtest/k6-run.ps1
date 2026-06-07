@@ -34,7 +34,7 @@ Write-Host "Test duration:   $env:TEST_DURATION"
 
 $collector = $null
 if (Get-Command node -ErrorAction SilentlyContinue) {
-    $collector = Start-Process -FilePath "node" -ArgumentList "collect-metrics.mjs" -WorkingDirectory (Get-Location) -PassThru -NoNewWindow
+    $collector = Start-Process -FilePath "node" -ArgumentList "node-exporter-metrics.mjs" -WorkingDirectory (Get-Location) -PassThru -NoNewWindow
 } else {
     Write-Warning "Node.js not found, metrics history will not be collected"
 }

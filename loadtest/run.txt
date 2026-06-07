@@ -23,7 +23,7 @@ k6 нагрузочный тест (комплексный)
 
 Метрики сервера (node-exporter, опрос 1 раз/с):
 GET http://localhost:9100/metrics
-История: report/metrics-history-....json (collect-metrics.mjs, нужен Node.js)
+История: report/metrics-history-....json (node-exporter-metrics.mjs, нужен Node.js)
 
 Без дашборда (если нужно):
 k6 run k6-stress-test.js

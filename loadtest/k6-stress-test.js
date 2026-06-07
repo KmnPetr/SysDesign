@@ -3,20 +3,9 @@
 
 import http from 'k6/http';
 import { check, group } from 'k6';
-import { Trend } from 'k6/metrics';
-import { buildMetricsSampleFromBody } from './k6-node-exporter.js';
-
-const serverCpu = new Trend('server_cpu_percent');
-const serverRam = new Trend('server_ram_mb');
-const serverRamMax = new Trend('server_ram_max_mb');
-const serverDisk = new Trend('server_disk_mbps');
 
 const MESSAGES_TO_CREATE = 5;
 const TEST_DURATION = __ENV.TEST_DURATION || '30s';
-
-const NODE_EXPORTER_URL = __ENV.NODE_EXPORTER_URL || 'http://localhost:9100';
-
-let lastMetricsState = null;
 
 export const options = {
     scenarios: {
@@ -31,16 +20,6 @@ export const options = {
             ],
             gracefulStop: '30s',
         },
-        metrics_poll: {
-            executor: 'constant-arrival-rate',
-            exec: 'pollServerMetrics',
-            rate: 1,
-            timeUnit: '1s',
-            duration: TEST_DURATION,
-            preAllocatedVUs: 1,
-            maxVUs: 1,
-            gracefulStop: '30s',
-        },
     },
 
     thresholds: {
@@ -49,10 +28,6 @@ export const options = {
         'http_req_duration{name:users_random}': ['p(95)<500'],
         'http_req_duration{name:messages_by_chat}': ['p(95)<1000'],
         'http_req_duration{name:create_message}': ['p(95)<1000'],
-        'server_cpu_percent': ['avg>=0'],
-        'server_ram_mb': ['avg>=0'],
-        'server_ram_max_mb': ['avg>=0'],
-        'server_disk_mbps': ['avg>=0'],
     },
 };
 
@@ -64,33 +39,6 @@ const requestParams = {
     },
     timeout: '10s',
 };
-
-export function pollServerMetrics() {
-    const response = http.get(`${NODE_EXPORTER_URL}/metrics`, {
-        timeout: '10s',
-        tags: { name: 'node_exporter' },
-    });
-
-    check(response, {
-        'node_exporter: status 200': (r) => r.status === 200,
-    });
-
-    if (response.status !== 200) {
-        return;
-    }
-
-    const parsed = buildMetricsSampleFromBody(response.body, Date.now(), lastMetricsState);
-    if (!parsed) {
-        return;
-    }
-
-    lastMetricsState = parsed.state;
-
-    serverCpu.add(parsed.sample.cpu);
-    serverRam.add(parsed.sample.ram);
-    serverRamMax.add(parsed.sample.ramMax);
-    serverDisk.add(parsed.sample.disk);
-}
 
 export default function () {
     let chatId;

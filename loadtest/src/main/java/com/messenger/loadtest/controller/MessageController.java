@@ -78,21 +78,6 @@ public class MessageController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/createmessages")
-    public ResponseEntity<Message> createMessages() {
-        if (MAX_CHAT_ID == 0L) {
-            return ResponseEntity.notFound().build();
-        }
-        for (int attempt = 0; attempt < 20; attempt++) {
-            long randomChatId = ThreadLocalRandom.current().nextLong(MIN_CHAT_ID, MAX_CHAT_ID + 1);
-            var message = messageService.createMessage(randomChatId);
-            if (message.isPresent()) {
-                return ResponseEntity.status(HttpStatus.CREATED).body(message.get());
-            }
-        }
-        return ResponseEntity.notFound().build();
-    }
-
     @PostMapping("/{chat_id}")
     public ResponseEntity<Message> createMessage(@PathVariable("chat_id") Long chatId) {
         return messageService.createMessage(chatId)

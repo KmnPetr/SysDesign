@@ -78,8 +78,8 @@ public class MessageController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/createrandom")
-    public ResponseEntity<Message> createRandomMessage() {
+    @PostMapping("/createmessages")
+    public ResponseEntity<Message> createMessages() {
         if (MAX_CHAT_ID == 0L) {
             return ResponseEntity.notFound().build();
         }

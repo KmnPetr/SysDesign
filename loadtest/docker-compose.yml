@@ -18,11 +18,7 @@ services:
       retries: 10
 
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: loadtest-api:local
-    pull_policy: build
+    build: .
     container_name: loadtest-api
     restart: always
     ports:

@@ -1,0 +1,23 @@
+Запуск loadtest
+===============
+
+Docker (API + PostgreSQL)
+-------------------------
+docker compose up --build -d
+
+API:       http://localhost:4200
+PostgreSQL: localhost:18432 (user: postgres, password: 0987654321)
+
+Остановить:
+docker compose down
+
+
+k6 нагрузочный тест (комплексный)
+---------------------------------
+.\k6-run.ps1 k6-stress-test.js
+
+Во время теста:  http://127.0.0.1:5665
+После теста:     HTML-отчёт с графиками в папке report/
+
+Без дашборда (если нужно):
+k6 run k6-stress-test.js

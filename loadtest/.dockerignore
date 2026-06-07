@@ -3,5 +3,6 @@ target/
 .idea/
 *.iml
 k6-stress-test.js
-summary.json
+k6-run.ps1
+report/
 agent-transcripts/

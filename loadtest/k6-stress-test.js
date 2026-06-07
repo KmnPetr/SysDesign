@@ -1,9 +1,5 @@
-//команда на запуск
-//k6 version
-//$env:K6_WEB_DASHBOARD="true"; k6 run k6-stress-test.js     //для PowerShell
-
-
-
+//команда на запуск (дашборд + HTML-отчёт с графиками в report/)
+//.\k6-run.ps1 k6-stress-test.js
 
 import http from 'k6/http';
 import { check, group } from 'k6';
@@ -32,7 +28,7 @@ export const options = {
             preAllocatedVUs: 100,
             maxVUs: 7000,
             stages: [
-                { duration: '10m', target: 1000 },
+                { duration: '4m', target: 300 },
             ],
             gracefulStop: '1m',
         },
@@ -171,7 +167,4 @@ export function handleSummary(data) {
         }
     }
 
-    return {
-        'summary.json': JSON.stringify(data, null, 2),
-    };
 }

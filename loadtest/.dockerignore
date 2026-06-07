@@ -7,4 +7,5 @@ k6-run.ps1
 k6-metrics-chart.js
 k6-inject-charts.js
 report/
+report/
 agent-transcripts/

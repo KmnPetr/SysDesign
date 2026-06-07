@@ -1,7 +1,30 @@
-import http from 'k6/http';
 import { injectIntoHtml } from './k6-metrics-chart.js';
 
-const BASE_URL = __ENV.BASE_URL || 'http://localhost:4200';
+const reportPath = __ENV.K6_WEB_DASHBOARD_EXPORT;
+const historyPath = __ENV.K6_METRICS_HISTORY;
+
+let baseHtml = null;
+let historySamples = null;
+
+if (reportPath) {
+    try {
+        baseHtml = open(reportPath);
+    } catch (e) {
+        console.log(`Не удалось прочитать отчёт: ${reportPath}`);
+    }
+} else {
+    console.log('K6_WEB_DASHBOARD_EXPORT не задан');
+}
+
+if (historyPath) {
+    try {
+        historySamples = JSON.parse(open(historyPath));
+    } catch (e) {
+        console.log(`Не удалось прочитать историю метрик: ${historyPath}`);
+    }
+} else {
+    console.log('K6_METRICS_HISTORY не задан');
+}
 
 export const options = {
     iterations: 1,
@@ -11,28 +34,15 @@ export const options = {
 export default function () {}
 
 export function handleSummary() {
-    const reportPath = __ENV.K6_WEB_DASHBOARD_EXPORT;
-    if (!reportPath) {
-        console.log('K6_WEB_DASHBOARD_EXPORT не задан');
+    if (!reportPath || !baseHtml) {
+        return {};
+    }
+    if (!historySamples || historySamples.length === 0) {
+        console.log('Нет данных истории метрик для внедрения');
         return {};
     }
 
-    let baseHtml;
-    try {
-        baseHtml = open(reportPath);
-    } catch (e) {
-        console.log(`Не удалось прочитать отчёт: ${reportPath}`);
-        return {};
-    }
-
-    const historyResponse = http.get(`${BASE_URL}/api/info/metrics/history`);
-    if (historyResponse.status !== 200) {
-        console.log('Не удалось получить /api/info/metrics/history');
-        return {};
-    }
-
-    const samples = JSON.parse(historyResponse.body);
-    const merged = injectIntoHtml(baseHtml, samples);
+    const merged = injectIntoHtml(baseHtml, historySamples);
     console.log(`\n📈 Графики сервера внедрены в конец: ${reportPath}`);
 
     return {

@@ -1,5 +1,6 @@
 package com.messenger.loadtest.controller;
 
+import com.messenger.loadtest.LoadtestApplication;
 import com.messenger.loadtest.WriteLoop;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,11 @@ public class WriteController {
 
     @GetMapping("/stop")
     public Map<String, Boolean> stop() {
-        WriteLoop.STOP = true;
-        return Map.of("stop", true);
+        LoadtestApplication.WRITE_TEST_DATA = false;
+        return Map.of(
+                "WRITE_TEST_DATA", LoadtestApplication.WRITE_TEST_DATA,
+                "IS_RUNNING_LOOP",WriteLoop.IS_RUNNING_LOOP
+                );
+
     }
 }

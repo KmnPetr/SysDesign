@@ -1,0 +1,7 @@
+target/
+.git/
+.idea/
+*.iml
+k6-stress-test.js
+summary.json
+agent-transcripts/

@@ -14,13 +14,13 @@ import java.util.Locale;
 
 @Component
 public class WriteLoop implements ApplicationRunner {
-    public static volatile boolean STOP;
 
     private final UserCreator userCreator;
     private final ChatsCreator chatsCreator;
     private final MessagesCreator messagesCreator;
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
+    public static volatile boolean IS_RUNNING_LOOP = false;
 
     public WriteLoop(
             UserCreator userCreator,
@@ -43,11 +43,13 @@ public class WriteLoop implements ApplicationRunner {
     }
 
     private void loop() {
-        while (!STOP) {
+        while (LoadtestApplication.WRITE_TEST_DATA) {
+            IS_RUNNING_LOOP=true;
             userCreator.createUsersInDB(LoadtestApplication.COUNT_USERS);
             chatsCreator.createChatsAndUsersChats();
             messagesCreator.createMessagesInDB();
             printTableCounts();
+            IS_RUNNING_LOOP=false;
         }
     }
 

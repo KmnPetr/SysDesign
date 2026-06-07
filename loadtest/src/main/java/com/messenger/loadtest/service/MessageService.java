@@ -39,6 +39,26 @@ public class MessageService {
                 .map(this::buildChatMessagesResponse);
     }
 
+    public Optional<Message> createMessage(Long chatId, Long userId, String text) {
+        if (text == null || text.isBlank()) {
+            return Optional.empty();
+        }
+        if (!chatRepository.existsById(chatId)) {
+            return Optional.empty();
+        }
+        boolean isMember = userChatRepository.findByIdChatId(chatId).stream()
+                .anyMatch(userChat -> userId.equals(userChat.getId().getUserId()));
+        if (!isMember) {
+            return Optional.empty();
+        }
+
+        Message message = new Message();
+        message.setChatId(chatId);
+        message.setUserId(userId);
+        message.setText(text);
+        return Optional.of(messageRepository.save(message));
+    }
+
     private ChatMessagesResponse buildChatMessagesResponse(Chat chat) {
         Long chatId = chat.getId();
         List<UserChat> userChats = userChatRepository.findByIdChatId(chatId);

@@ -20,6 +20,7 @@ public class InfoController {
             "GET http://localhost:4200/api/users/{id}",
             "GET http://localhost:4200/api/users/random",
             "GET http://localhost:4200/api/messages/{chat_id}",
+            "POST http://localhost:4200/api/messages/{chat_id}",
             "GET http://localhost:4200/api/messages/random",
             "GET http://localhost:4200/api/write/stop"
     );

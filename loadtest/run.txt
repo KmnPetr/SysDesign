@@ -17,7 +17,11 @@ k6 нагрузочный тест (комплексный)
 .\k6-run.ps1 k6-stress-test.js
 
 Во время теста:  http://127.0.0.1:5665
-После теста:     HTML-отчёт с графиками в папке report/
+После теста: report/stress-....html — k6 дашборд + графики CPU/RAM/Disk в конце файла
+
+Метрики сервера (опрос 1 раз/с во время теста):
+GET http://localhost:4200/api/info/metrics
+GET http://localhost:4200/api/info/metrics/history
 
 Без дашборда (если нужно):
 k6 run k6-stress-test.js

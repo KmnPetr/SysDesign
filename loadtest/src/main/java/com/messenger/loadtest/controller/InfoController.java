@@ -1,5 +1,8 @@
 package com.messenger.loadtest.controller;
 
+import com.messenger.loadtest.dto.SystemMetricsHistoryEntry;
+import com.messenger.loadtest.dto.SystemMetricsResponse;
+import com.messenger.loadtest.service.SystemMetricsService;
 import jakarta.persistence.EntityManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -17,6 +20,8 @@ import java.util.Map;
 public class InfoController {
     private static final List<String> ENDPOINTS = List.of(
             "GET http://localhost:4200/api/info",
+            "GET http://localhost:4200/api/info/metrics",
+            "GET http://localhost:4200/api/info/metrics/history",
             "GET http://localhost:4200/api/users/{id}",
             "GET http://localhost:4200/api/users/random",
             "GET http://localhost:4200/api/messages/{chat_id}",
@@ -28,10 +33,26 @@ public class InfoController {
 
     private final EntityManager entityManager;
     private final TransactionTemplate transactionTemplate;
+    private final SystemMetricsService systemMetricsService;
 
-    public InfoController(EntityManager entityManager, PlatformTransactionManager transactionManager) {
+    public InfoController(
+            EntityManager entityManager,
+            PlatformTransactionManager transactionManager,
+            SystemMetricsService systemMetricsService
+    ) {
         this.entityManager = entityManager;
         this.transactionTemplate = new TransactionTemplate(transactionManager);
+        this.systemMetricsService = systemMetricsService;
+    }
+
+    @GetMapping("/info/metrics")
+    public SystemMetricsResponse getMetrics() {
+        return systemMetricsService.collect();
+    }
+
+    @GetMapping("/info/metrics/history")
+    public List<SystemMetricsHistoryEntry> getMetricsHistory() {
+        return systemMetricsService.getHistory();
     }
 
     @GetMapping("/info")

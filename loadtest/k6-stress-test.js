@@ -14,6 +14,11 @@ const usersRandomDuration = new Trend('endpoint_users_random_duration', true);
 const messagesByChatDuration = new Trend('endpoint_messages_by_chat_duration', true);
 const createMessageDuration = new Trend('endpoint_create_message_duration', true);
 
+const serverCpu = new Trend('server_cpu_percent');
+const serverRamCurrent = new Trend('server_ram_current_mb');
+const serverRamMax = new Trend('server_ram_max_mb');
+const serverDiskSpeed = new Trend('server_disk_speed_mbps');
+
 const MESSAGES_TO_CREATE = 5;
 
 // Настройки теста
@@ -28,9 +33,19 @@ export const options = {
             preAllocatedVUs: 100,
             maxVUs: 7000,
             stages: [
-                { duration: '4m', target: 300 },
+                { duration: '2m', target: 300 },
             ],
             gracefulStop: '1m',
+        },
+        metrics_poll: {
+            executor: 'constant-arrival-rate',
+            exec: 'pollServerMetrics',
+            rate: 1,
+            timeUnit: '1s',
+            duration: '2m',
+            preAllocatedVUs: 1,
+            maxVUs: 1,
+            gracefulStop: '30s',
         },
     },
 
@@ -43,6 +58,9 @@ export const options = {
         'endpoint_users_random_duration': ['p(95)<500'],
         'endpoint_messages_by_chat_duration': ['p(95)<1000'],
         'endpoint_create_message_duration': ['p(95)<1000'],
+        'server_cpu_percent': ['avg>=0'],
+        'server_ram_current_mb': ['avg>=0'],
+        'server_disk_speed_mbps': ['avg>=0'],
     },
 };
 
@@ -54,6 +72,31 @@ const requestParams = {
     },
     timeout: '10s',
 };
+
+export function pollServerMetrics() {
+    const response = http.get(`${BASE_URL}/api/info/metrics`, {
+        ...requestParams,
+        tags: { name: 'info_metrics' },
+    });
+
+    check(response, {
+        'info_metrics: статус 200': (r) => r.status === 200,
+    });
+
+    if (response.status !== 200) {
+        return;
+    }
+
+    try {
+        const metrics = JSON.parse(response.body);
+        serverCpu.add(metrics.cpu);
+        serverRamCurrent.add(metrics.ram.current);
+        serverRamMax.add(metrics.ram.max);
+        serverDiskSpeed.add(metrics.disk.speed);
+    } catch (e) {
+        return;
+    }
+}
 
 export default function () {
     let chatId;

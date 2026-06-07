@@ -15,8 +15,13 @@ $reportPath = "$reportDir/$baseName-$timestamp.html"
 
 $env:K6_WEB_DASHBOARD = "true"
 $env:K6_WEB_DASHBOARD_EXPORT = $reportPath
+$env:K6_WEB_DASHBOARD_PERIOD = "5s"
 
 Write-Host "Live dashboard: http://127.0.0.1:5665"
 Write-Host "Report export:  $reportPath"
 
 k6 run $Script
+
+$env:K6_WEB_DASHBOARD = "false"
+$env:BASE_URL = "http://localhost:4200"
+k6 run k6-inject-charts.js

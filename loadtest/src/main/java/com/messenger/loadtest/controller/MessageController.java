@@ -83,7 +83,7 @@ public class MessageController {
         if (MAX_CHAT_ID == 0L) {
             return ResponseEntity.notFound().build();
         }
-        for (int attempt = 0; attempt < 5; attempt++) {
+        for (int attempt = 0; attempt < 20; attempt++) {
             long randomChatId = ThreadLocalRandom.current().nextLong(MIN_CHAT_ID, MAX_CHAT_ID + 1);
             var message = messageService.createMessage(randomChatId);
             if (message.isPresent()) {

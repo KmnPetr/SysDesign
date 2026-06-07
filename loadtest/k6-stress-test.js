@@ -130,12 +130,7 @@ export default function () {
 
     group('create_message', function () {
         for (let i = 0; i < MESSAGES_TO_CREATE; i++) {
-            const payload = JSON.stringify({
-                user_id: userId,
-                text: `k6 message vu${__VU} iter${__ITER} #${i}`,
-            });
-
-            const createResponse = http.post(`${BASE_URL}/api/messages/${chatId}`, payload, {
+            const createResponse = http.post(`${BASE_URL}/api/messages/${chatId}`, null, {
                 ...requestParams,
                 tags: { name: 'create_message' },
             });

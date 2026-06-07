@@ -14,6 +14,14 @@ public class WriteController {
 
     @GetMapping("/stop")
     public Map<String, Boolean> stop() {
+
+        Thread current = Thread.currentThread();
+        System.out.printf(
+                "GET /api/write/stop: thread=%s, virtual=%s%n",
+                current.getName(),
+                current.isVirtual()
+        );
+
         LoadtestApplication.WRITE_TEST_DATA = false;
         return Map.of(
                 "WRITE_TEST_DATA", LoadtestApplication.WRITE_TEST_DATA,

@@ -1,7 +1,6 @@
 package com.messenger.loadtest.controller;
 
 import com.messenger.loadtest.dto.ChatMessagesResponse;
-import com.messenger.loadtest.dto.CreateMessageRequest;
 import com.messenger.loadtest.models.Message;
 import com.messenger.loadtest.service.MessageService;
 import jakarta.annotation.PostConstruct;
@@ -13,7 +12,6 @@ import org.springframework.transaction.support.TransactionTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,7 +45,7 @@ public class MessageController {
     public void refreshChatIdBounds() {
         transactionTemplate.executeWithoutResult(status -> {
             Object[] row = (Object[]) entityManager.createNativeQuery(
-                    "SELECT MIN(chat_id), MAX(chat_id) FROM messages"
+                    "SELECT MIN(id), MAX(id) FROM chats"
             ).getSingleResult();
             MIN_CHAT_ID = toLongOrZero(row[0]);
             MAX_CHAT_ID = toLongOrZero(row[1]);
@@ -66,7 +64,7 @@ public class MessageController {
         for (int attempt = 0; attempt < 3; attempt++) {
             long randomChatId = ThreadLocalRandom.current().nextLong(MIN_CHAT_ID, MAX_CHAT_ID + 1);
             var response = messageService.getChatWithMessages(randomChatId);
-            if (response.isPresent() && !response.get().getMessages().isEmpty()) {
+            if (response.isPresent()) {
                 return ResponseEntity.ok(response.get());
             }
         }
@@ -80,13 +78,25 @@ public class MessageController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @PostMapping("/createrandom")
+    public ResponseEntity<Message> createRandomMessage() {
+        if (MAX_CHAT_ID == 0L) {
+            return ResponseEntity.notFound().build();
+        }
+        for (int attempt = 0; attempt < 5; attempt++) {
+            long randomChatId = ThreadLocalRandom.current().nextLong(MIN_CHAT_ID, MAX_CHAT_ID + 1);
+            var message = messageService.createMessage(randomChatId);
+            if (message.isPresent()) {
+                return ResponseEntity.status(HttpStatus.CREATED).body(message.get());
+            }
+        }
+        return ResponseEntity.notFound().build();
+    }
+
     @PostMapping("/{chat_id}")
-    public ResponseEntity<Message> createMessage(
-            @PathVariable("chat_id") Long chatId,
-            @RequestBody CreateMessageRequest request
-    ) {
-        return messageService.createMessage(chatId, request.getUserId(), request.getText())
-                .map(message -> ResponseEntity.status(HttpStatus.CREATED).body(message))
+    public ResponseEntity<Message> createMessage(@PathVariable("chat_id") Long chatId) {
+        return messageService.createMessage(chatId)
+                .map(created -> ResponseEntity.status(HttpStatus.CREATED).body(created))
                 .orElse(ResponseEntity.badRequest().build());
     }
 }

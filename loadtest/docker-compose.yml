@@ -34,5 +34,12 @@ services:
       postgres:
         condition: service_healthy
 
+  node-exporter:
+    image: prom/node-exporter:v1.9.0
+    container_name: loadtest-node-exporter
+    restart: always
+    ports:
+      - "9100:9100"
+
 volumes:
   loadtest_pgdata:

@@ -1,0 +1,485 @@
+[
+  {
+    "timestamp": 1780864833857,
+    "cpu": 0,
+    "ram": 2330,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864834755,
+    "cpu": 0.88,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.01
+  },
+  {
+    "timestamp": 1780864835752,
+    "cpu": 0.13,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864835769,
+    "cpu": 7.41,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.23
+  },
+  {
+    "timestamp": 1780864835784,
+    "cpu": 5.71,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 1.3
+  },
+  {
+    "timestamp": 1780864835802,
+    "cpu": 8.33,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.43
+  },
+  {
+    "timestamp": 1780864835820,
+    "cpu": 3.85,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 1.09
+  },
+  {
+    "timestamp": 1780864835836,
+    "cpu": 4.55,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.24
+  },
+  {
+    "timestamp": 1780864835852,
+    "cpu": 6.06,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.24
+  },
+  {
+    "timestamp": 1780864835867,
+    "cpu": 5,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0.78
+  },
+  {
+    "timestamp": 1780864835883,
+    "cpu": 7.14,
+    "ram": 2331,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864835897,
+    "cpu": 5.26,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.56
+  },
+  {
+    "timestamp": 1780864835911,
+    "cpu": 8,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864835927,
+    "cpu": 4.55,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864835942,
+    "cpu": 6.45,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.78
+  },
+  {
+    "timestamp": 1780864835957,
+    "cpu": 5.88,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.26
+  },
+  {
+    "timestamp": 1780864835971,
+    "cpu": 6.25,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.28
+  },
+  {
+    "timestamp": 1780864835987,
+    "cpu": 5.56,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.24
+  },
+  {
+    "timestamp": 1780864836003,
+    "cpu": 4.76,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836017,
+    "cpu": 7.14,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836032,
+    "cpu": 8.7,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836046,
+    "cpu": 8,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.84
+  },
+  {
+    "timestamp": 1780864836061,
+    "cpu": 8.33,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836075,
+    "cpu": 0,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836090,
+    "cpu": 4.76,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836104,
+    "cpu": 3.57,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836119,
+    "cpu": 5.56,
+    "ram": 2333,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836133,
+    "cpu": 6.25,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836149,
+    "cpu": 7.14,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836165,
+    "cpu": 3.13,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 8.79
+  },
+  {
+    "timestamp": 1780864836179,
+    "cpu": 9.52,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836195,
+    "cpu": 0,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0.24
+  },
+  {
+    "timestamp": 1780864836209,
+    "cpu": 6.25,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836223,
+    "cpu": 12.5,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836239,
+    "cpu": 3.45,
+    "ram": 2332,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836255,
+    "cpu": 5.56,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836269,
+    "cpu": 3.7,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0.56
+  },
+  {
+    "timestamp": 1780864836286,
+    "cpu": 4.17,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836301,
+    "cpu": 6.9,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0.26
+  },
+  {
+    "timestamp": 1780864836317,
+    "cpu": 0,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836331,
+    "cpu": 4.17,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836346,
+    "cpu": 3.33,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836360,
+    "cpu": 5.88,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836375,
+    "cpu": 3.7,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0.26
+  },
+  {
+    "timestamp": 1780864836391,
+    "cpu": 8.33,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0.98
+  },
+  {
+    "timestamp": 1780864836407,
+    "cpu": 10.34,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836420,
+    "cpu": 9.52,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836435,
+    "cpu": 0,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836450,
+    "cpu": 8,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836464,
+    "cpu": 4,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836478,
+    "cpu": 5,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836492,
+    "cpu": 6.45,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836507,
+    "cpu": 8,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836523,
+    "cpu": 5.56,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836538,
+    "cpu": 6.45,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836552,
+    "cpu": 6.25,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0.28
+  },
+  {
+    "timestamp": 1780864836567,
+    "cpu": 5.26,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836581,
+    "cpu": 6.9,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836598,
+    "cpu": 0,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836614,
+    "cpu": 6.25,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 5.13
+  },
+  {
+    "timestamp": 1780864836628,
+    "cpu": 4.35,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836644,
+    "cpu": 7.69,
+    "ram": 2334,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836658,
+    "cpu": 5.26,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836673,
+    "cpu": 5.88,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836689,
+    "cpu": 6.25,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836704,
+    "cpu": 3.57,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836719,
+    "cpu": 5,
+    "ram": 2335,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836733,
+    "cpu": 8.7,
+    "ram": 2336,
+    "ramMax": 7642,
+    "disk": 0
+  },
+  {
+    "timestamp": 1780864836748,
+    "cpu": 4.17,
+    "ram": 2336,
+    "ramMax": 7642,
+    "disk": 0
+  }
+]

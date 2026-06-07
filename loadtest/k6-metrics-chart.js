@@ -8,14 +8,14 @@ export function buildChartsInjection(samples) {
     const start = samples[0].timestamp;
     const labels = samples.map((s) => `${Math.round((s.timestamp - start) / 1000)}s`);
     const cpu = samples.map((s) => s.cpu);
-    const ramCurrent = samples.map((s) => s.ramCurrent);
+    const ram = samples.map((s) => s.ram ?? s.ramCurrent);
     const ramMax = samples.map((s) => s.ramMax);
-    const diskSpeed = samples.map((s) => s.diskSpeed);
+    const disk = samples.map((s) => s.disk ?? s.diskSpeed);
 
     return `
 <!-- k6-server-metrics -->
 <section id="server-metrics-charts" style="margin:32px 24px 48px;font-family:sans-serif;color:#eee;">
-    <h2 style="margin:0 0 8px;font-size:22px;">Метрики сервера (API)</h2>
+    <h2 style="margin:0 0 8px;font-size:22px;">Метрики сервера (node-exporter)</h2>
     <p style="margin:0 0 20px;color:#aaa;">Точек: ${samples.length}, опрос 1 раз/с</p>
     <div style="margin-bottom:16px;height:${CHART_HEIGHT}px;">
         <canvas id="k6ServerCpuChart"></canvas>
@@ -64,8 +64,8 @@ export function buildChartsInjection(samples) {
             labels,
             datasets: [
                 {
-                    label: 'RAM current MB',
-                    data: ${JSON.stringify(ramCurrent)},
+                    label: 'RAM used MB',
+                    data: ${JSON.stringify(ram)},
                     borderColor: '#36a2eb',
                     backgroundColor: 'rgba(54, 162, 235, 0.15)',
                     fill: true,
@@ -90,7 +90,7 @@ export function buildChartsInjection(samples) {
             labels,
             datasets: [{
                 label: 'Disk MB/s',
-                data: ${JSON.stringify(diskSpeed)},
+                data: ${JSON.stringify(disk)},
                 borderColor: '#4bc0c0',
                 backgroundColor: 'rgba(75, 192, 192, 0.15)',
                 fill: true,

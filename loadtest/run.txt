@@ -5,8 +5,10 @@ Docker (API + PostgreSQL)
 -------------------------
 docker compose up --build -d
 
-API:       http://localhost:4200
-PostgreSQL: localhost:18432 (user: postgres, password: 0987654321)
+API:            http://localhost:4200
+PostgreSQL:     localhost:18432 (user: postgres, password: 0987654321)
+node-exporter:  http://localhost:9100/metrics
+(на Windows Docker — метрики Linux-VM Docker, не физический хост)
 
 Остановить:
 docker compose down
@@ -19,9 +21,9 @@ k6 нагрузочный тест (комплексный)
 Во время теста:  http://127.0.0.1:5665
 После теста: report/stress-....html — k6 дашборд + графики CPU/RAM/Disk в конце файла
 
-Метрики сервера (опрос 1 раз/с во время теста):
-GET http://localhost:4200/api/info/metrics
-GET http://localhost:4200/api/info/metrics/history
+Метрики сервера (node-exporter, опрос 1 раз/с):
+GET http://localhost:9100/metrics
+История: report/metrics-history-....json (collect-metrics.mjs, нужен Node.js)
 
 Без дашборда (если нужно):
 k6 run k6-stress-test.js

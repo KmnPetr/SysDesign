@@ -6,6 +6,9 @@ k6-stress-test.js
 k6-run.ps1
 k6-metrics-chart.js
 k6-inject-charts.js
+k6-node-exporter.js
+collect-metrics.mjs
+package.json
 report/
 report/
 agent-transcripts/

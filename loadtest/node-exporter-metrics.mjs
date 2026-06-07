@@ -2,9 +2,10 @@ import fs from 'node:fs';
 
 const MB = 1024 * 1024;
 
+const testScript = process.env.K6_TEST_SCRIPT || 'k6-stress-test.js';
 const exporterUrl = process.env.NODE_EXPORTER_URL || 'http://localhost:9100';
 const historyPath = process.env.K6_METRICS_HISTORY;
-const durationMs = parseDuration(process.env.TEST_DURATION || '30s');
+const durationMs = parseDuration(readTestDuration(testScript));
 
 if (!historyPath) {
     console.error('K6_METRICS_HISTORY is not set');
@@ -13,6 +14,15 @@ if (!historyPath) {
 
 const history = [];
 let lastState = null;
+
+function readTestDuration(scriptPath) {
+    const source = fs.readFileSync(scriptPath, 'utf8');
+    const match = source.match(/const TEST_DURATION\s*=\s*['"]([^'"]+)['"]/);
+    if (!match) {
+        throw new Error(`TEST_DURATION not found in ${scriptPath}`);
+    }
+    return match[1];
+}
 
 function parseDuration(value) {
     const match = /^(\d+)(ms|s|m|h)$/.exec(value || '30s');

@@ -14,23 +14,16 @@ if (-not (Test-Path $reportDir)) {
 $reportPath = "$reportDir/$baseName-$timestamp.html"
 $historyPath = "$reportDir/metrics-history-$timestamp.json"
 
-$scriptContent = Get-Content $Script -Raw
-if ($scriptContent -match "TEST_DURATION\s*=\s*(?:__ENV\.TEST_DURATION\s*\|\|\s*)?'([^']+)'") {
-    $env:TEST_DURATION = $Matches[1]
-} elseif (-not $env:TEST_DURATION) {
-    $env:TEST_DURATION = "30s"
-}
-
 $env:K6_WEB_DASHBOARD = "true"
 $env:K6_WEB_DASHBOARD_EXPORT = $reportPath
 $env:K6_WEB_DASHBOARD_PERIOD = "5s"
 $env:K6_METRICS_HISTORY = $historyPath
+$env:K6_TEST_SCRIPT = $Script
 $env:NODE_EXPORTER_URL = if ($env:NODE_EXPORTER_URL) { $env:NODE_EXPORTER_URL } else { "http://localhost:9100" }
 
 Write-Host "Live dashboard: http://127.0.0.1:5665"
 Write-Host "Report export:  $reportPath"
 Write-Host "Metrics history: $historyPath"
-Write-Host "Test duration:   $env:TEST_DURATION"
 
 $collector = $null
 if (Get-Command node -ErrorAction SilentlyContinue) {

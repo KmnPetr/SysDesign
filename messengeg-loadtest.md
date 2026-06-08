@@ -99,3 +99,5 @@ report: ./loadtest/report/stress-2026-06-08_10-48-14.html
 
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 14000 r/s; maxVUs: 20000
+report: ./loadtest/report/stress-2026-06-08_11-28-12.html
+метрики на конец теста: ./loadtest/report/222222.png

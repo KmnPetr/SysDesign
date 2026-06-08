@@ -5,7 +5,7 @@ import http from 'k6/http';
 import { check, group } from 'k6';
 
 const MESSAGES_TO_CREATE = 5;
-const TEST_DURATION = '2m';
+const TEST_DURATION = '30m';
 
 export const options = {
     scenarios: {
@@ -16,7 +16,7 @@ export const options = {
             preAllocatedVUs: 100,
             maxVUs: 20000,
             stages: [
-                { duration: TEST_DURATION, target: 10 },
+                { duration: TEST_DURATION, target: 500 },
             ],
             gracefulStop: '30s',
         },

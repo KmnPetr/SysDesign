@@ -52,8 +52,8 @@ report: ./loadtest/report/stress-2026-06-08_02-34-08.html
 
 
 Недомашний комп:
-cpu: 32
-ram: 132
+cpu: AMD Ryzen 9 9950X (16 cores / 32 threads) 
+ram: 4 * 32 = 128 GB DDR5
 диск: Samsung SSD 9100 PRO 4TB
 виртуальный стек: ubuntu24/docker/postgresql-18
 доп иструменты: java21, node_exporter, k6
@@ -91,3 +91,11 @@ max_parallel_workers_per_gather = 2 → 6
 random_page_cost = 4.0 → 1.1 (SSD/NVMe)
 seq_page_cost = 1.0 → 1.0 (оставить)
 shared_preload_libraries = '' → оставить пустым (если нет расширений)
+
+
+стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 7000 r/s; maxVUs: 20000  повтор
+report: ./loadtest/report/stress-2026-06-08_10-48-14.html
+метрики на конец теста: ./loadtest/report/111111.png
+
+
+стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 14000 r/s; maxVUs: 20000

@@ -52,8 +52,8 @@ report: loadtest/report/stress-2026-06-08_02-34-08.html
 
 
 Недомашний комп:
-cpu: ?
-ram: ?
+cpu: 32
+ram: 132
 диск: ?
 виртуальный стек: ubuntu24/docker/postgresql-18
 доп иструменты: java21, node_exporter, k6

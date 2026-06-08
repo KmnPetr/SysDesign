@@ -1,29 +1,9 @@
-Запуск loadtest
-===============
 
-Docker (API + PostgreSQL)
--------------------------
+docker compose down
 docker compose up --build -d
 
-API:            http://localhost:4200
-PostgreSQL:     localhost:18432 (user: postgres, password: 0987654321)
-node-exporter:  http://localhost:9100/metrics
-(на Windows Docker — метрики Linux-VM Docker, не физический хост)
 
-Остановить:
-docker compose down
+.\k6-run.ps1 k6-stress-test.js //на винде 
 
-
-k6 нагрузочный тест (комплексный)
----------------------------------
-.\k6-run.ps1 k6-stress-test.js
-
-Во время теста:  http://127.0.0.1:5665
-После теста: report/stress-....html — k6 дашборд + графики CPU/RAM/Disk в конце файла
-
-Метрики сервера (node-exporter, опрос 1 раз/с):
-GET http://localhost:9100/metrics
-История: report/metrics-history-....json (node-exporter-metrics.mjs, нужен Node.js)
-
-Без дашборда (если нужно):
-k6 run k6-stress-test.js
+sudo docker compose exec -it k6 bash
+./run-k6.sh k6-stress-test.js //в контейнере

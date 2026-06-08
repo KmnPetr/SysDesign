@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: "0987654321"
       POSTGRES_DB: postgres
     volumes:
-      - loadtest_pgdata:/var/lib/postgresql
+      - /home/petr/data/pg/postgres-data:/var/lib/postgresql
     healthcheck:
       test: [ "CMD-SHELL", "pg_isready -U postgres" ]
       interval: 5s
@@ -41,5 +41,23 @@ services:
     ports:
       - "9100:9100"
 
-volumes:
-  loadtest_pgdata:
+  k6:
+    build:
+      context: .
+      dockerfile: Dockerfile.k6
+    container_name: loadtest-k6
+    user: "1000:1000"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/loadtest
+    working_dir: /loadtest
+    environment:
+      NODE_EXPORTER_URL: http://node-exporter:9100
+    ports:
+      - "5665:5665"
+    depends_on:
+      - api
+      - node-exporter
+

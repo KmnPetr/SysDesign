@@ -1,0 +1,12 @@
+FROM grafana/k6:latest
+
+USER root
+RUN apk add --no-cache bash && \
+    addgroup -g 1000 petr && \
+    adduser -D -u 1000 -G petr petr
+
+USER petr
+WORKDIR /loadtest
+
+ENTRYPOINT ["/bin/sh", "-c"]
+CMD ["exec sleep infinity"]

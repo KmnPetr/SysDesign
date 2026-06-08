@@ -54,7 +54,7 @@ report: loadtest/report/stress-2026-06-08_02-34-08.html
 Недомашний комп:
 cpu: 32
 ram: 132
-диск: ?
+диск: Samsung SSD 9100 PRO 4TB
 виртуальный стек: ubuntu24/docker/postgresql-18
 доп иструменты: java21, node_exporter, k6
 стресс тест проводился в течении 1 часа с монотонно возрастающей нагрузкой до 7000 r/s

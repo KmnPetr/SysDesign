@@ -1,6 +1,6 @@
-результаты нагрузочного тестирования
+# результаты нагрузочного тестирования
 
-входные данные
+## входные данные
 
 Таблицы:
    - users: 2_390_000 записей
@@ -8,60 +8,92 @@
    - users_chats: 26_230_116 записей
    - messages: 162_576_450 записей
 
-SQL таблиц: loadtest/src/main/resources/db/migration/V1__create_user_chat_message.sql
+SQL таблиц: [`loadtest/src/main/resources/db/migration/V1__create_user_chat_message.sql`](loadtest/src/main/resources/db/migration/V1__create_user_chat_message.sql)
 
 вес постгресс данных: 37.9GB
 
 генерация данных: данные генерировались с учетом получения кореляции приближенной к 0, все писались с предварительно перемешанными id и FK
 
-сценарий тестирования
+## сценарий тестирования
 (сценарий - это попытка воссоздать пользовательский опыт использования приложения)
-1 шаг: пользователь входит в приложение, подгружаются данные список его чатов и доп информация
+
+### 1 шаг: пользователь входит в приложение, подгружаются данные список его чатов и доп информация
 делается запрос, на сервер делается запрос, выдает данные по случайному из имеющихся пользователей
+
+```http
 GET http://localhost:4200/api/users/random
-responce:
+```
+```json
 {
-user: { ... текущий пользователь ...},
-chats: [ ... список его чатов ... ],
-user_chats: [ ... список связей many to many с доп инфой ...]
+  user: { ... текущий пользователь ...},
+  chats: [ ... список его чатов ... ],
+  user_chats: [ ... список связей many to many с доп инфой ...]
 }
-2 шаг: пользователь открывает один из чатов: скрипт js нагрузочного тестирования выбирает один из чатов и по его id делает запрос
+```
+
+### 2 шаг: пользователь открывает один из чатов: скрипт js нагрузочного тестирования выбирает один из чатов и по его id делает запрос
+
+```http
 GET http://localhost:4200/api/messages/{chat_id}
-responce:
-   {
-   "chat": { ... информация по чату ...},
-   "users": [ ... сам пользователь и его собеседник ... ],
-   "user_chats": [ ... список связей many to many обоих пользователей ... ],
-   "messages": [ ... все имеющиеся сообщения чата ... ]
-   }
-3 шаг: пользователь пишет 5 сообщений в чат
+```
+```json
+{
+  "chat": { ... информация по чату ...},
+  "users": [ ... сам пользователь и его собеседник ... ],
+  "user_chats": [ ... список связей many to many обоих пользователей ... ],
+  "messages": [ ... все имеющиеся сообщения чата ... ]
+}
+```
+
+### 3 шаг: пользователь пишет 5 сообщений в чат
+
+```http
 POST http://localhost:4200/api/messages/{chat_id}
+```
+сервер сам создает message со случайной строкой
 
 
 все 3 шага в сумме = 7 запросов
 
-Домашний комп:
-cpu: 8x16
-ram: 16 (но докеру доступно не все)
-диск: Netac NVMe SSD 512GB
-виртуальный стек: windows/wsl/docker/postgresql-18
-доп иструменты: java21, node_exporter, k6
+## Домашний комп:
+
+- cpu: 8x16
+- ram: 16 (но докеру доступно не все)
+- диск: Netac NVMe SSD 512GB
+- виртуальный стек: windows/wsl/docker/postgresql-18
+- доп иструменты: java21, node_exporter, k6
+
+---
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 3500 r/s; maxVUs: 20000
-report: ./loadtest/report/stress-2026-06-08_02-34-08.html
+
+report: [`./loadtest/report/stress-2026-06-08_02-34-08.html`](./loadtest/report/stress-2026-06-08_02-34-08.html)
 
 
-Недомашний комп:
-cpu: AMD Ryzen 9 9950X (16 cores / 32 threads) 
-ram: 4 * 32 = 128 GB DDR5
-диск: Samsung SSD 9100 PRO 4TB
-виртуальный стек: ubuntu24/docker/postgresql-18
-доп иструменты: java21, node_exporter, k6
+## Недомашний комп:
+- cpu: AMD Ryzen 9 9950X (16 cores / 32 threads)
+- ram: 4 * 32 = 128 GB DDR5
+- диск: Samsung SSD 9100 PRO 4TB
+- виртуальный стек: ubuntu24/docker/postgresql-18
+- доп иструменты: java21, node_exporter, k6
+
+---
+
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 3500 r/s; maxVUs: 20000
-report: ./loadtest/report/stress-2026-06-08_08-51-46.html
+
+report: [`./loadtest/report/stress-2026-06-08_08-51-46.html`](./loadtest/report/stress-2026-06-08_08-51-46.html)
+
+---
+
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 7000 r/s; maxVUs: 20000
-report ./loadtest/report/stress-2026-06-08_09-37-20.html
 
+report: [`./loadtest/report/stress-2026-06-08_09-37-20.html`](./loadtest/report/stress-2026-06-08_09-37-20.html)
+
+---
+
+поправил конфиги постгреса, увеличил дефолтные значения
+
+```
 listen_addresses = '*' → оставить как есть
 max_connections = 100 → 200 (если нет пула соединений; иначе лучше 100 и PgBouncer)
 shared_buffers = 128MB → 25GB
@@ -91,13 +123,20 @@ max_parallel_workers_per_gather = 2 → 6
 random_page_cost = 4.0 → 1.1 (SSD/NVMe)
 seq_page_cost = 1.0 → 1.0 (оставить)
 shared_preload_libraries = '' → оставить пустым (если нет расширений)
+```
 
+---
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 7000 r/s; maxVUs: 20000  повтор
-report: ./loadtest/report/stress-2026-06-08_10-48-14.html
-метрики на конец теста: ./loadtest/report/111111.png
 
+report: [`./loadtest/report/stress-2026-06-08_10-48-14.html`](./loadtest/report/stress-2026-06-08_10-48-14.html)
+
+метрики на конец теста: [`./loadtest/report/111111.png`](./loadtest/report/111111.png)
+
+---
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 14000 r/s; maxVUs: 20000
-report: ./loadtest/report/stress-2026-06-08_11-28-12.html
-метрики на конец теста: ./loadtest/report/222222.png
+
+report: [`./loadtest/report/stress-2026-06-08_11-28-12.html`](./loadtest/report/stress-2026-06-08_11-28-12.html)
+
+метрики на конец теста: [`./loadtest/report/222222.png`](./loadtest/report/222222.png)

@@ -61,3 +61,33 @@ ram: 132
 report: ./loadtest/report/stress-2026-06-08_08-51-46.html
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 7000 r/s; maxVUs: 20000
 report ./loadtest/report/stress-2026-06-08_09-37-20.html
+
+listen_addresses = '*' → оставить как есть
+max_connections = 100 → 200 (если нет пула соединений; иначе лучше 100 и PgBouncer)
+shared_buffers = 128MB → 25GB
+effective_cache_size = 4GB → 70–80GB
+work_mem = 4MB → 32MB (до 64MB если тяжёлые сортировки/агрегации)
+maintenance_work_mem = 64MB → 2GB
+autovacuum = on → оставить как есть
+autovacuum_max_workers = 3 → 10
+autovacuum_naptime = 1min → 10–20s (для активной записи)
+autovacuum_vacuum_cost_delay = 2ms → 0–1ms
+autovacuum_vacuum_cost_limit = -1 → 2000–5000
+autovacuum_worker_slots = 16 → 16 (оставить, если это кастомная сборка)
+wal_level = replica → replica (оставить, logical только если нужен CDC)
+fsync = on → оставить как есть (обязательно для безопасности)
+synchronous_commit = on → off (если можно потерять последние миллисекунды ради скорости)
+wal_compression = off → on
+wal_buffers = -1 → 64MB
+checkpoint_timeout = 5min → 15min
+checkpoint_completion_target = 0.9 → 0.9 (оставить)
+max_wal_size = 1GB → 32GB
+min_wal_size = 80MB → 2GB
+effective_io_concurrency = 16 → 200
+maintenance_io_concurrency = 16 → 200
+max_worker_processes = 8 → 30
+max_parallel_workers = 8 → 16
+max_parallel_workers_per_gather = 2 → 6
+random_page_cost = 4.0 → 1.1 (SSD/NVMe)
+seq_page_cost = 1.0 → 1.0 (оставить)
+shared_preload_libraries = '' → оставить пустым (если нет расширений)

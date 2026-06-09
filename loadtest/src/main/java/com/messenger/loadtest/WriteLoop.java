@@ -48,7 +48,7 @@ public class WriteLoop implements ApplicationRunner {
             userCreator.createUsersInDB(LoadtestApplication.COUNT_USERS);
             chatsCreator.createChatsAndUsersChats();
             messagesCreator.createMessagesInDB();
-            printTableCounts();
+            //printTableCounts();
             IS_RUNNING_LOOP=false;
         }
     }

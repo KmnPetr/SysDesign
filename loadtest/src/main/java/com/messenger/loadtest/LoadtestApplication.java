@@ -11,7 +11,7 @@ public class LoadtestApplication {
 	public static int MAX_OWN_CHAT = 10;
 	public static int MIN_COUNT_MSG = 1;
 	public static int MAX_COUNT_MSG = 40;
-	public static volatile boolean WRITE_TEST_DATA = false;
+	public static volatile boolean WRITE_TEST_DATA = true;
 
 	public static void main(String[] args) {
 		SpringApplication.run(LoadtestApplication.class, args);

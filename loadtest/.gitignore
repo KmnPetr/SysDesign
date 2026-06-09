@@ -31,6 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### k6 reports ###
-report/*.html

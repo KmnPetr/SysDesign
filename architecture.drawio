@@ -2743,9 +2743,6 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rdqbrM9tLs96WM5SAqd--1" edge="1" parent="1" source="kScJISu15zfZb4uDhMC2-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="kScJISu15zfZb4uDhMC2-42" value="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
         <mxCell id="flIDPVI9RCQYgmAitEnB-3" edge="1" parent="1" source="kScJISu15zfZb4uDhMC2-49" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="flIDPVI9RCQYgmAitEnB-2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>

@@ -141,39 +141,51 @@ report: [`./loadtest/report/stress-2026-06-08_11-28-12.html`](./loadtest/report/
 
 метрики на конец теста: [`./loadtest/report/222222.png`](./loadtest/report/222222.png)
 
-
 ---
 
 увеличил размер даты до 1.2Тб
+
+```json
 {
-"users":"78_441_000",
-"chats":"431_233_507",
-"users_chats":"862_467_014",
-"messages":"5_114_770_149",
-"endpoints":[
-"GET http://localhost:4200/api/info",
-"GET http://localhost:4200/api/users/random",
-"GET http://localhost:4200/api/messages/{chat_id}",
-"POST http://localhost:4200/api/messages/{chat_id}",
-"GET http://localhost:4200/api/messages/random",
-"GET http://localhost:4200/api/write/stop"]}
+  "users": "78_441_000",
+  "chats": "431_233_507",
+  "users_chats": "862_467_014",
+  "messages": "5_114_770_149",
+  "endpoints": [
+    "GET http://localhost:4200/api/info",
+    "GET http://localhost:4200/api/users/random",
+    "GET http://localhost:4200/api/messages/{chat_id}",
+    "POST http://localhost:4200/api/messages/{chat_id}",
+    "GET http://localhost:4200/api/messages/random",
+    "GET http://localhost:4200/api/write/stop"
+  ]
+}
+```
+
+---
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 14000 r/s; maxVUs: 20000
-report: ./loadtest/report/stress-2026-06-11_06-08-47.html
-image: ./loadtest/report/33333.png
+
+report: [`./loadtest/report/stress-2026-06-11_06-08-47.html`](./loadtest/report/stress-2026-06-11_06-08-47.html)
+
+image: [`./loadtest/report/33333.png`](./loadtest/report/33333.png)
 
 ---
 
 стресс тест проводился в течении 30 мин с монотонно возрастающей нагрузкой до 28000 r/s; maxVUs: 40000
-report: ./loadtest/report/stress-2026-06-11_06-56-08.html
 
+report: [`./loadtest/report/stress-2026-06-11_06-56-08.html`](./loadtest/report/stress-2026-06-11_06-56-08.html)
+
+```
  tablename | attname | correlation 
 -----------+---------+-------------
  users     | id      |  0.99999994
  chats     | id      |  0.99999994
  messages  | id      |  0.99999946
- 
- SELECT
+```
+
+```sql
+SELECT
     tablename,
     attname,
     correlation,
@@ -187,6 +199,9 @@ WHERE (tablename, attname) IN (
     ('users_chats', 'last_read_msg_id')
 )
 ORDER BY tablename, attname;
+```
+
+```
   tablename  |     attname      | correlation |   n_distinct   
 -------------+------------------+-------------+----------------
  messages    | chat_id          |   0.9943944 |   7.384133e+07
@@ -194,6 +209,5 @@ ORDER BY tablename, attname;
  users_chats | chat_id          |  0.99999994 |   5.941421e+06
  users_chats | last_read_msg_id |             |              0
  users_chats | user_id          |  0.99999994 |         632328
-
-
+```
 
